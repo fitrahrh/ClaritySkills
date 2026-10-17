@@ -93,55 +93,66 @@ boost:
 
 dialog:
   general:
-    btn_close: "<red>Закрыть</red>"
-    btn_back: "<yellow>Назад</yellow>"
-    btn_confirm: "<green>Подтвердить</green>"
-    btn_cancel: "<red>Отмена</red>"
+    btn_close: "Закрыть"
+    btn_back: "Назад"
+    btn_confirm: "Подтвердить"
+    btn_cancel: "Отмена"
   main:
-    title: "CLARITY SKILLS"
+    title: "<bold>Clarity Skills</bold>"
     body: |
-      <gold><bold>Обзор навыков игрока</bold></gold>
-      <gray>Уровень:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max_level></gray>
-      <gray>Опыт:</gray> <green><current_exp></green> <dark_gray>/</dark_gray> <gray><req_exp></gray> <aqua>(<exp_percent>%)</aqua>
-      <gray>Свободные очки:</gray> <gold><bold><points></bold></gold>
-      <gray>Активный буст опыта:</gray> <light_purple><boost></light_purple>
+      <gray>Ваш уровень:</gray> <white><level></white><dark_gray>/</dark_gray><white><max_level></white>
 
-      <yellow><bold>Основные характеристики:</bold></yellow>
-      <red>Атака (ATK):</red> <white><atk></white> | <light_purple>Магия (MATK):</light_purple> <white><matk></white> | <green>Защита (DEF):</green> <white><def></white>
+      <gray>Прогресс опыта:</gray> <white><current_exp></white><dark_gray>/</dark_gray><white><req_exp></white> <dark_gray>[<aqua><exp_percent>%</aqua>]</dark_gray>
 
-      <aqua><bold>Стихийные характеристики:</bold></aqua>
-      <gold>Огонь:</gold> <white><fire></white> | <aqua>Ветер:</aqua> <white><wind></white> | <blue>Вода:</blue> <white><water></white> | <dark_green>Земля:</dark_green> <white><earth></white> | <yellow>Свет:</yellow> <white><light></white>
-    btn_allocate: "<green><bold>Распределить очки</bold></green>"
+      <white>Свободные очки:</white> <gold><bold><points></bold></gold>
+      <white>Активный буст:</white> <yellow><boost></yellow>
+
+      <white>Основные характеристики:</white>
+      <gray> Атака:</gray> <white><atk></white>  <gray> Магия:</gray> <white><matk></white>  <gray> Защита:</gray> <white><def></white>
+
+      <white>Стихийные характеристики:</white>
+      <gray> Огонь:</gray> <white><fire></white>  <gray> Ветер:</gray> <white><wind></white>  <gray> Вода:</gray> <white><water></white>
+      <gray> Земля:</gray> <white><earth></white>  <gray> Свет:</gray> <white><light></white>
+    btn_allocate: "Распределить очки"
     btn_allocate_tooltip: "<gray>Потратьте очки навыков на улучшение характеристик."
-    btn_elements: "<aqua><bold>Ступени стихий</bold></aqua>"
+    btn_elements: "Ступени стихий"
     btn_elements_tooltip: "<gray>Просмотр этапов стихий и особых способностей."
-    btn_language: "<yellow>Настройки языка</yellow>"
   attributes:
-    title: "РАСПРЕДЕЛЕНИЕ ОЧКОВ"
-    body: "<gray>Выберите характеристику для распределения очков.\nДоступно очков: <gold><bold><points></bold></gold>"
-    stat_entry: "<stat> <dark_gray>[<yellow>Ур. <level><dark_gray>/<gray><max><dark_gray>]</dark_gray>"
+    title: "<bold>Распределение Очков</bold>"
+    body: |
+      <gray>Выберите характеристику для распределения очков.</gray>
+      <gray>Доступно очков:</gray> <gold><bold><points></bold></gold>
+    stat_entry: "<stat> [Ур. <level>/<max>]"
   upgrade:
-    title: "УЛУЧШЕНИЕ ХАРАКТЕРИСТИКИ"
+    title: "<bold>Улучшение Характеристики</bold>"
     body: |
       <stat>
-      <desc>
-      <gray>Текущий уровень:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max></gray>
-      <gray>Стоимость за очко:</gray> <gold><cost> очк.</gold>
+      <gray><desc></gray>
+
+      <gray>Текущий уровень:</gray> <white><level></white><dark_gray>/</dark_gray><gray><max></gray>
+      <gray>Стоимость за уровень:</gray> <yellow><cost> очк.</yellow>
       <gray>Доступно очков:</gray> <gold><bold><points></bold></gold>
-    btn_plus_1: "<green>+1 очко</green>"
-    btn_plus_5: "<green>+5 очков</green>"
-    btn_plus_10: "<green>+10 очков</green>"
-    btn_custom: "<aqua>Своё количество...</aqua>"
+    btn_plus_1: "+1 очко"
+    btn_plus_5: "+5 очков"
+    btn_plus_10: "+10 очков"
+    btn_custom: "Своё количество..."
   custom:
-    title: "ВЫБОРОЧНОЕ РАСПРЕДЕЛЕНИЕ"
-    body: "<gray>Введите количество очков для вложения в <stat>:"
+    title: "<bold>Выборочное Распределение</bold>"
+    body: "<gray>Введите количество очков для вложения в <stat>:</gray>"
     label: "Количество очков"
     invalid_amount: "<prefix><red>Введено неверное число! Укажите положительное целое число."
   elements:
-    title: "СТУПЕНИ СТИХИЙ"
-    body: "<gray>Стихийные характеристики открывают особые ступени на высоких уровнях:\n<yellow>Порог 1-й ступени:</yellow> Уровень 25\n<gold>Порог 2-й ступени:</gold> Уровень 50"
-    entry: "<element> <dark_gray>-</dark_gray> <tier> <dark_gray>(Ур. <level>)</dark_gray>"
-    entry_tooltip: "<gray>Требования:\n<yellow>• <t1_name> (Треб. ур. <t1_req>)\n<gold>• <t2_name> (Треб. ур. <t2_req>)</gray>"
+    title: "<bold>Ступени Стихий</bold>"
+    body: |
+      <white>Стихийные характеристики открывают особые ступени на высоких уровнях.</white>
+
+      <white>1. Уровень <t1_req></white>
+      <white>2. Уровень <t2_req></white>
+    entry: "<element> - <tier> (Ур. <level>)"
+    entry_tooltip: |
+      <gray>Требования:</gray>
+      <gray>• <t1_name> (Треб. ур. <t1_req>)</gray>
+      <gray>• <t2_name> (Треб. ур. <t2_req>)</gray>
 
 command:
   skill:
@@ -151,6 +162,7 @@ command:
     stat_element_entry: "<gray>• <stat>: <yellow><level></yellow> <dark_gray>[<tier><dark_gray>]"
     help: "<prefix><gray>Используйте <yellow>/skill</yellow> для открытия меню, либо <yellow>/skill info</yellow> / <yellow>/skill stats</yellow>."
   admin:
+    usage: "<prefix><red>Использование: <yellow><usage></yellow>"
     reloaded: "<prefix><green>Конфигурация и языковые файлы ClaritySkills успешно перезагружены."
     player_not_found: "<prefix><red>Игрок <yellow><player></yellow> не найден в сети."
     exp_given: "<prefix><green>Выдано <yellow><amount> опыта</yellow> игроку <gold><player></gold> (Буст: <aqua><boosted></aqua>)."
@@ -158,13 +170,20 @@ command:
     exp_set: "<prefix><green>Установлен опыт игрока <gold><player></gold> на <yellow><amount></yellow>."
     exp_reset: "<prefix><green>Опыт игрока <gold><player></gold> сброшен до 0."
     point_given: "<prefix><green>Выдано <gold><amount> очков навыков</gold> игроку <yellow><player></yellow>."
+    points_given: "<prefix><green>Выдано <gold><amount> очков навыков</gold> игроку <yellow><player></yellow>."
     point_taken: "<prefix><green>Снято <gold><amount> очков навыков</gold> у игрока <yellow><player></yellow>."
+    points_taken: "<prefix><green>Снято <gold><amount> очков навыков</gold> у игрока <yellow><player></yellow>."
     point_set: "<prefix><green>Установлено очков навыков игрока <yellow><player></yellow> на <gold><amount></gold>."
+    points_set: "<prefix><green>Установлено очков навыков игрока <yellow><player></yellow> на <gold><amount></gold>."
     point_reset: "<prefix><green>Очки навыков игрока <yellow><player></yellow> сброшены до 0."
+    points_reset: "<prefix><green>Очки навыков игрока <yellow><player></yellow> сброшены до 0."
     boost_given: "<prefix><green>Выдан буст опыта <gold><multiplier></gold> игроку <yellow><player></yellow> на <aqua><duration></aqua>."
+    boost_cleared: "<prefix><green>Личный буст опыта снят с игрока <yellow><player></yellow>."
     boost_cleared_player: "<prefix><green>Личный буст опыта снят с игрока <yellow><player></yellow>."
     boost_global_set: "<prefix><green>Общий буст опыта <gold><multiplier></gold> установлен на <aqua><duration></aqua>."
     boost_global_cleared: "<prefix><green>Общий буст опыта очищен."
+    boost_list_player: "<prefix><gray>Буст Игрока <yellow><player></yellow>: <gold><multiplier></gold> <gray>(Осталось: <aqua><duration></aqua>)</gray>"
+    boost_list_global: "<prefix><gray>Глобальный Буст: <gold><multiplier></gold> <gray>(Осталось: <aqua><duration></aqua>)</gray>"
     level_set: "<prefix><green>Уровень игрока <yellow><player></yellow> установлен на <gold><level></gold>."
     player_reset: "<prefix><green>Данные игрока <yellow><player></yellow> сброшены (Режим: <aqua><mode></aqua>)."
     help: |

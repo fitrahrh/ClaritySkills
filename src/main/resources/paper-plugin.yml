@@ -1,7 +1,6 @@
 name: ClaritySkills
 version: '${version}'
 main: com.harukiyu.clarityskills.ClaritySkills
-bootstrapper: com.harukiyu.clarityskills.ClaritySkillsBootstrap
 api-version: '1.21'
 description: Advanced RPG Skill & Attribute Addon for Paper 26.3
 authors: [Harukiyu]
@@ -13,3 +12,11 @@ dependencies:
     PlaceholderAPI:
       load: BEFORE
       required: false
+
+permissions:
+  clarityskills.use:
+    description: Allows using /skill
+    default: true
+  clarityskills.admin:
+    description: Allows using /skilladmin
+    default: op

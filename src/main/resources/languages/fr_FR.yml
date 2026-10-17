@@ -93,55 +93,66 @@ boost:
 
 dialog:
   general:
-    btn_close: "<red>Fermer</red>"
-    btn_back: "<yellow>Retour</yellow>"
-    btn_confirm: "<green>Confirmer</green>"
-    btn_cancel: "<red>Annuler</red>"
+    btn_close: "Fermer"
+    btn_back: "Retour"
+    btn_confirm: "Confirmer"
+    btn_cancel: "Annuler"
   main:
-    title: "CLARITY SKILLS"
+    title: "<bold>Clarity Skills</bold>"
     body: |
-      <gold><bold>Aperçu des Compétences</bold></gold>
-      <gray>Niveau :</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max_level></gray>
-      <gray>EXP :</gray> <green><current_exp></green> <dark_gray>/</dark_gray> <gray><req_exp></gray> <aqua>(<exp_percent>%)</aqua>
-      <gray>Points Disponibles :</gray> <gold><bold><points></bold></gold>
-      <gray>Boost d'EXP Actif :</gray> <light_purple><boost></light_purple>
+      <gray>Votre Niveau :</gray> <white><level></white><dark_gray>/</dark_gray><white><max_level></white>
 
-      <yellow><bold>Attributs Principaux :</bold></yellow>
-      <red>Attaque (ATK) :</red> <white><atk></white> | <light_purple>Magie (MATK) :</light_purple> <white><matk></white> | <green>Défense (DEF) :</green> <white><def></white>
+      <gray>Progression EXP :</gray> <white><current_exp></white><dark_gray>/</dark_gray><white><req_exp></white> <dark_gray>[<aqua><exp_percent>%</aqua>]</dark_gray>
 
-      <aqua><bold>Attributs Élémentaires :</bold></aqua>
-      <gold>Feu :</gold> <white><fire></white> | <aqua>Vent :</aqua> <white><wind></white> | <blue>Eau :</blue> <white><water></white> | <dark_green>Terre :</dark_green> <white><earth></white> | <yellow>Lumière :</yellow> <white><light></white>
-    btn_allocate: "<green><bold>Allouer les Points</bold></green>"
+      <white>Points Disponibles :</white> <gold><bold><points></bold></gold>
+      <white>Boost Actif :</white> <yellow><boost></yellow>
+
+      <white>Attributs Principaux :</white>
+      <gray> Attaque :</gray> <white><atk></white>  <gray> Magie :</gray> <white><matk></white>  <gray> Défense :</gray> <white><def></white>
+
+      <white>Attributs Élémentaires :</white>
+      <gray> Feu :</gray> <white><fire></white>  <gray> Vent :</gray> <white><wind></white>  <gray> Eau :</gray> <white><water></white>
+      <gray> Terre :</gray> <white><earth></white>  <gray> Lumière :</gray> <white><light></white>
+    btn_allocate: "Allouer les Points"
     btn_allocate_tooltip: "<gray>Dépensez vos points pour améliorer vos statistiques."
-    btn_elements: "<aqua><bold>Paliers Élémentaires</bold></aqua>"
+    btn_elements: "Paliers Élémentaires"
     btn_elements_tooltip: "<gray>Visualisez les paliers d'évolution et compétences spéciales."
-    btn_language: "<yellow>Options de Langue</yellow>"
   attributes:
-    title: "ATTRIBUTION DES STATISTIQUES"
-    body: "<gray>Sélectionnez un attribut à améliorer.\nPoints Disponibles : <gold><bold><points></bold></gold>"
-    stat_entry: "<stat> <dark_gray>[<yellow>Niv <level><dark_gray>/<gray><max><dark_gray>]</dark_gray>"
+    title: "<bold>Attribution des Statistiques</bold>"
+    body: |
+      <gray>Sélectionnez un attribut à améliorer ci-dessous.</gray>
+      <gray>Points Disponibles :</gray> <gold><bold><points></bold></gold>
+    stat_entry: "<stat> [Niv <level>/<max>]"
   upgrade:
-    title: "AMÉLIORER L'ATTRIBUT"
+    title: "<bold>Améliorer l'Attribut</bold>"
     body: |
       <stat>
-      <desc>
-      <gray>Niveau Actuel :</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max></gray>
-      <gray>Coût par Point :</gray> <gold><cost> Point(s)</gold>
+      <gray><desc></gray>
+
+      <gray>Niveau Actuel :</gray> <white><level></white><dark_gray>/</dark_gray><gray><max></gray>
+      <gray>Coût par Niveau :</gray> <yellow><cost> Point(s)</yellow>
       <gray>Points Disponibles :</gray> <gold><bold><points></bold></gold>
-    btn_plus_1: "<green>+1 Point</green>"
-    btn_plus_5: "<green>+5 Points</green>"
-    btn_plus_10: "<green>+10 Points</green>"
-    btn_custom: "<aqua>Quantité Libre...</aqua>"
+    btn_plus_1: "+1 Point"
+    btn_plus_5: "+5 Points"
+    btn_plus_10: "+10 Points"
+    btn_custom: "Quantité Libre..."
   custom:
-    title: "ATTRIBUTION LIBRE"
-    body: "<gray>Entrez le nombre de points à attribuer à <stat> :"
+    title: "<bold>Attribution Libre</bold>"
+    body: "<gray>Entrez le nombre de points à attribuer à <stat> :</gray>"
     label: "Quantité de Points"
     invalid_amount: "<prefix><red>Quantité invalide ! Veuillez saisir un nombre entier positif."
   elements:
-    title: "PALIERS ÉLÉMENTAIRES"
-    body: "<gray>Les attributs élémentaires débloquent des paliers d'élite à haut niveau :\n<yellow>Étape Palier 1 :</yellow> Niveau 25\n<gold>Étape Palier 2 :</gold> Niveau 50"
-    entry: "<element> <dark_gray>-</dark_gray> <tier> <dark_gray>(Niv <level>)</dark_gray>"
-    entry_tooltip: "<gray>Prérequis :\n<yellow>• <t1_name> (Niveau requis <t1_req>)\n<gold>• <t2_name> (Niveau requis <t2_req>)</gray>"
+    title: "<bold>Paliers Élémentaires</bold>"
+    body: |
+      <white>Les attributs élémentaires débloquent des paliers d'élite à haut niveau.</white>
+
+      <white>1. Niveau <t1_req></white>
+      <white>2. Niveau <t2_req></white>
+    entry: "<element> - <tier> (Niv <level>)"
+    entry_tooltip: |
+      <gray>Prérequis :</gray>
+      <gray>• <t1_name> (Niveau requis <t1_req>)</gray>
+      <gray>• <t2_name> (Niveau requis <t2_req>)</gray>
 
 command:
   skill:
@@ -151,6 +162,7 @@ command:
     stat_element_entry: "<gray>• <stat> : <yellow><level></yellow> <dark_gray>[<tier><dark_gray>]"
     help: "<prefix><gray>Utilisez <yellow>/skill</yellow> pour ouvrir le menu ou <yellow>/skill info</yellow> / <yellow>/skill stats</yellow>."
   admin:
+    usage: "<prefix><red>Utilisation : <yellow><usage></yellow>"
     reloaded: "<prefix><green>Configuration et fichiers de langue de ClaritySkills rechargés."
     player_not_found: "<prefix><red>Le joueur <yellow><player></yellow> est introuvable en ligne."
     exp_given: "<prefix><green>Attribué <yellow><amount> EXP</yellow> à <gold><player></gold> (Boost : <aqua><boosted></aqua>)."
@@ -158,13 +170,20 @@ command:
     exp_set: "<prefix><green>Défini l'EXP de <gold><player></gold> à <yellow><amount></yellow>."
     exp_reset: "<prefix><green>Réinitialisé l'EXP de <gold><player></gold> à 0."
     point_given: "<prefix><green>Attribué <gold><amount> Points</gold> à <yellow><player></yellow>."
+    points_given: "<prefix><green>Attribué <gold><amount> Points</gold> à <yellow><player></yellow>."
     point_taken: "<prefix><green>Retiré <gold><amount> Points</gold> de <yellow><player></yellow>."
+    points_taken: "<prefix><green>Retiré <gold><amount> Points</gold> de <yellow><player></yellow>."
     point_set: "<prefix><green>Défini les Points de <yellow><player></yellow> à <gold><amount></gold>."
+    points_set: "<prefix><green>Défini les Points de <yellow><player></yellow> à <gold><amount></gold>."
     point_reset: "<prefix><green>Réinitialisé les Points de <yellow><player></yellow> à 0."
+    points_reset: "<prefix><green>Réinitialisé les Points de <yellow><player></yellow> à 0."
     boost_given: "<prefix><green>Attribué un Boost d'EXP de <gold><multiplier></gold> à <yellow><player></yellow> pendant <aqua><duration></aqua>."
+    boost_cleared: "<prefix><green>Boost d'EXP personnel de <yellow><player></yellow> supprimé."
     boost_cleared_player: "<prefix><green>Boost d'EXP personnel de <yellow><player></yellow> supprimé."
     boost_global_set: "<prefix><green>Boost d'EXP Global de <gold><multiplier></gold> configuré pour <aqua><duration></aqua>."
     boost_global_cleared: "<prefix><green>Boost d'EXP Global supprimé."
+    boost_list_player: "<prefix><gray>Boost du Joueur <yellow><player></yellow>: <gold><multiplier></gold> <gray>(Restant: <aqua><duration></aqua>)</gray>"
+    boost_list_global: "<prefix><gray>Boost Global: <gold><multiplier></gold> <gray>(Restant: <aqua><duration></aqua>)</gray>"
     level_set: "<prefix><green>Défini le niveau de <yellow><player></yellow> à <gold><level></gold>."
     player_reset: "<prefix><green>Joueur <yellow><player></yellow> réinitialisé (Mode : <aqua><mode></aqua>)."
     help: |

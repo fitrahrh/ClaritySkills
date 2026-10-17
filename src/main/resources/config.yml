@@ -49,7 +49,3 @@ effects:
   level_up_sound: "ui.toast.challenge_complete"
   play_tier_unlock_sound: true
   tier_unlock_sound: "ui.toast.challenge_complete"
-
-gui:
-  # Enable registration in Pause (ESC) Menu
-  register_pause_screen: true

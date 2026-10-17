@@ -93,55 +93,66 @@ boost:
 
 dialog:
   general:
-    btn_close: "<red>Close</red>"
-    btn_back: "<yellow>Back</yellow>"
-    btn_confirm: "<green>Confirm</green>"
-    btn_cancel: "<red>Cancel</red>"
+    btn_close: "Close"
+    btn_back: "Back"
+    btn_confirm: "Confirm"
+    btn_cancel: "Cancel"
   main:
-    title: "CLARITY SKILLS"
+    title: "<bold>Clarity Skills</bold>"
     body: |
-      <gold><bold>Player Skill Overview</bold></gold>
-      <gray>Level:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max_level></gray>
-      <gray>EXP:</gray> <green><current_exp></green> <dark_gray>/</dark_gray> <gray><req_exp></gray> <aqua>(<exp_percent>%)</aqua>
-      <gray>Available Points:</gray> <gold><bold><points></bold></gold>
-      <gray>Active EXP Boost:</gray> <light_purple><boost></light_purple>
+      <gray>Your Level:</gray> <white><level></white><dark_gray>/</dark_gray><white><max_level></white>
 
-      <yellow><bold>Core Attributes:</bold></yellow>
-      <red>Attack (ATK):</red> <white><atk></white> | <light_purple>Magic (MATK):</light_purple> <white><matk></white> | <green>Defense (DEF):</green> <white><def></white>
+      <gray>EXP Progress:</gray> <white><current_exp></white><dark_gray>/</dark_gray><white><req_exp></white> <dark_gray>[<aqua><exp_percent>%</aqua>]</dark_gray>
 
-      <aqua><bold>Elemental Attributes:</bold></aqua>
-      <gold>Fire:</gold> <white><fire></white> | <aqua>Wind:</aqua> <white><wind></white> | <blue>Water:</blue> <white><water></white> | <dark_green>Earth:</dark_green> <white><earth></white> | <yellow>Light:</yellow> <white><light></white>
-    btn_allocate: "<green><bold>Allocate Attributes</bold></green>"
+      <white>Available Points:</white> <gold><bold><points></bold></gold>
+      <white>Active Boost:</white> <yellow><boost></yellow>
+
+      <white>Core Attributes:</white>
+      <gray> Attack:</gray> <white><atk></white>  <gray> Magic:</gray> <white><matk></white>  <gray> Defense:</gray> <white><def></white>
+
+      <white>Elemental Attributes:</white>
+      <gray> Fire:</gray> <white><fire></white>  <gray> Wind:</gray> <white><wind></white>  <gray> Water:</gray> <white><water></white>
+      <gray> Earth:</gray> <white><earth></white>  <gray> Light:</gray> <white><light></white>
+    btn_allocate: "Allocate Attributes"
     btn_allocate_tooltip: "<gray>Spend your skill points to upgrade attributes."
-    btn_elements: "<aqua><bold>Elemental Masteries</bold></aqua>"
+    btn_elements: "Elemental Masteries"
     btn_elements_tooltip: "<gray>View elemental tier milestones and special powers."
-    btn_language: "<yellow>Language Settings</yellow>"
   attributes:
-    title: "ATTRIBUTE ALLOCATION"
-    body: "<gray>Select an attribute to allocate skill points.\nAvailable Points: <gold><bold><points></bold></gold>"
-    stat_entry: "<stat> <dark_gray>[<yellow>Lvl <level><dark_gray>/<gray><max><dark_gray>]</dark_gray>"
+    title: "<bold>Attribute Allocation</bold>"
+    body: |
+      <gray>Select an attribute to allocate skill points.</gray>
+      <gray>Available Points:</gray> <gold><bold><points></bold></gold>
+    stat_entry: "<stat> [Lvl <level>/<max>]"
   upgrade:
-    title: "UPGRADE STAT"
+    title: "<bold>Upgrade Attribute</bold>"
     body: |
       <stat>
-      <desc>
-      <gray>Current Level:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max></gray>
-      <gray>Cost Per Point:</gray> <gold><cost> Point(s)</gold>
+      <gray><desc></gray>
+
+      <gray>Current Level:</gray> <white><level></white><dark_gray>/</dark_gray><gray><max></gray>
+      <gray>Cost Per Level:</gray> <yellow><cost> Point(s)</yellow>
       <gray>Available Points:</gray> <gold><bold><points></bold></gold>
-    btn_plus_1: "<green>+1 Point</green>"
-    btn_plus_5: "<green>+5 Points</green>"
-    btn_plus_10: "<green>+10 Points</green>"
-    btn_custom: "<aqua>Custom Amount...</aqua>"
+    btn_plus_1: "+1 Point"
+    btn_plus_5: "+5 Points"
+    btn_plus_10: "+10 Points"
+    btn_custom: "Custom Amount..."
   custom:
-    title: "CUSTOM ALLOCATION"
-    body: "<gray>Enter the number of points to allocate into <stat>:"
+    title: "<bold>Custom Allocation</bold>"
+    body: "<gray>Enter the number of points to allocate into <stat>:</gray>"
     label: "Points Amount"
     invalid_amount: "<prefix><red>Invalid amount entered! Please specify a positive integer."
   elements:
-    title: "ELEMENTAL MASTERIES"
-    body: "<gray>Elemental attributes unlock special tiers at high levels:\n<yellow>Tier 1 Threshold:</yellow> Level 25\n<gold>Tier 2 Threshold:</gold> Level 50"
-    entry: "<element> <dark_gray>-</dark_gray> <tier> <dark_gray>(Lvl <level>)</dark_gray>"
-    entry_tooltip: "<gray>Milestones:\n<yellow>• <t1_name> (Req Lvl <t1_req>)\n<gold>• <t2_name> (Req Lvl <t2_req>)</gray>"
+    title: "<bold>Elemental Masteries</bold>"
+    body: |
+      <white>Elemental attributes unlock special tiers at high levels.</white>
+
+      <white>1. Level <t1_req></white>
+      <white>2. Level <t2_req></white>
+    entry: "<element> - <tier> (Lvl <level>)"
+    entry_tooltip: |
+      <gray>Milestones:</gray>
+      <gray>• <t1_name> (Req. Lvl <t1_req>)</gray>
+      <gray>• <t2_name> (Req. Lvl <t2_req>)</gray>
 
 command:
   skill:
@@ -151,6 +162,7 @@ command:
     stat_element_entry: "<gray>• <stat>: <yellow><level></yellow> <dark_gray>[<tier><dark_gray>]"
     help: "<prefix><gray>Use <yellow>/skill</yellow> to open the skill dialog menu, or <yellow>/skill info</yellow> / <yellow>/skill stats</yellow>."
   admin:
+    usage: "<prefix><red>Usage: <yellow><usage></yellow>"
     reloaded: "<prefix><green>ClaritySkills configuration and language bundles reloaded."
     player_not_found: "<prefix><red>Player <yellow><player></yellow> was not found online."
     exp_given: "<prefix><green>Gave <yellow><amount> EXP</yellow> to <gold><player></gold> (Boost applied: <aqua><boosted></aqua>)."
@@ -158,13 +170,20 @@ command:
     exp_set: "<prefix><green>Set EXP of <gold><player></gold> to <yellow><amount></yellow>."
     exp_reset: "<prefix><green>Reset EXP of <gold><player></gold> to 0."
     point_given: "<prefix><green>Gave <gold><amount> Skill Points</gold> to <yellow><player></yellow>."
+    points_given: "<prefix><green>Gave <gold><amount> Skill Points</gold> to <yellow><player></yellow>."
     point_taken: "<prefix><green>Removed <gold><amount> Skill Points</gold> from <yellow><player></yellow>."
+    points_taken: "<prefix><green>Removed <gold><amount> Skill Points</gold> from <yellow><player></yellow>."
     point_set: "<prefix><green>Set Skill Points of <yellow><player></yellow> to <gold><amount></gold>."
+    points_set: "<prefix><green>Set Skill Points of <yellow><player></yellow> to <gold><amount></gold>."
     point_reset: "<prefix><green>Reset Skill Points of <yellow><player></yellow> to 0."
+    points_reset: "<prefix><green>Reset Skill Points of <yellow><player></yellow> to 0."
     boost_given: "<prefix><green>Gave <gold><multiplier></gold> EXP Boost to <yellow><player></yellow> for <aqua><duration></aqua>."
+    boost_cleared: "<prefix><green>Cleared personal EXP Boost for <yellow><player></yellow>."
     boost_cleared_player: "<prefix><green>Cleared personal EXP Boost for <yellow><player></yellow>."
     boost_global_set: "<prefix><green>Global EXP Boost of <gold><multiplier></gold> set for <aqua><duration></aqua>."
     boost_global_cleared: "<prefix><green>Global EXP Boost has been cleared."
+    boost_list_player: "<prefix><gray>Player <yellow><player></yellow> Boost: <gold><multiplier></gold> <gray>(Remaining: <aqua><duration></aqua>)</gray>"
+    boost_list_global: "<prefix><gray>Global Boost: <gold><multiplier></gold> <gray>(Remaining: <aqua><duration></aqua>)</gray>"
     level_set: "<prefix><green>Set level of <yellow><player></yellow> to <gold><level></gold>."
     player_reset: "<prefix><green>Reset player <yellow><player></yellow> (Mode: <aqua><mode></aqua>)."
     help: |

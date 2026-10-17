@@ -10,25 +10,20 @@
 
 ## Features
 
-### 🎮 1. Native ESC / Pause Menu Button ("Skills Menu")
-* Adds a native button directly onto Minecraft's Game Menu (ESC screen) via the `#minecraft:pause_screen_additions` dialog tag.
-* Seamless client integration registered through Paper's `PluginBootstrap` and lifecycle registry events.
-* Allows players to access their skill dashboard, allocate stat points, and view elemental masteries with zero chat commands required.
-
-### ⚡ 2. Command-Only Leveling & Exponential EXP Formula
+### ⚡ 1. Command-Only Leveling & Exponential EXP Formula
 * Controlled EXP progression designed for server-driven questing, custom mob kills, and events:
   $$\text{Required EXP} = \text{base\_exp} \times (\text{level}^{\text{exp\_exponent}})$$
 * Configurable max level, base EXP, exponent, and points awarded per level in `config.yml`.
 * **Zero Vanilla Grind Glitches**: EXP is granted through admin commands (`/skilladmin exp give`) or developer API, preventing mob-farm exploits.
 * **Audio & Visual Celebrations**: Native Adventure toast sounds, title screens, and subtitles triggered on level up.
 
-### 🚀 3. Dynamic EXP Boost System (Multipliers & Buffs)
+### 🚀 2. Dynamic EXP Boost System (Multipliers & Buffs)
 * Multiply EXP rewards dynamically with decimal precision (e.g., `x1.5`, `x2.0`, `x3.0`).
 * **Personal Boost**: Applied per player with configurable durations (`30m`, `1h`, `1d`) or permanent status (`perm`).
 * **Global Server Boost**: Server-wide multiplier with automatic broadcast announcements upon activation and expiration.
 * **Seamless Calculation**: If a player with a active `x2.0` boost is given 10 EXP, the engine automatically credits 20 EXP.
 
-### 💎 4. Skill Point Economy & 8 Core Attributes
+### 💎 3. Skill Point Economy & 8 Core Attributes
 Players earn Skill Points upon leveling up (or via `/skilladmin point give`) to invest into 8 distinct attributes:
 1. **Attack (ATK)**: Increases physical melee and ranged weapon damage (+0.15 damage/pt).
 2. **Magic (MATK)**: Increases spell and potion potency (+1% potency/pt) and expands Mana capacity in `ClarityRPG`.
@@ -39,7 +34,7 @@ Players earn Skill Points upon leveling up (or via `/skilladmin point give`) to 
 7. **Earth (Tanah)**: Enhances defensive armor rating, knockback resistance, and emergency barrier shields.
 8. **Light (Cahaya)**: Holy radiance, bonus smite damage against undead monsters, and vampiric lifesteal.
 
-### 🌟 5. Milestone Elemental Tiers & Masteries
+### 🌟 4. Milestone Elemental Tiers & Masteries
 Reaching milestone levels (default: Level 25 for Tier 1, Level 50 for Tier 2) unlocks unique passive and active elemental masteries:
 
 | Element | Tier 1 (Level 25) | Tier 2 (Level 50) |
@@ -50,13 +45,15 @@ Reaching milestone levels (default: Level 25 for Tier 1, Level 50 for Tier 2) un
 | **Earth (Tanah)** | **Megalit**: Fortified armor rating & high knockback resistance. | **Bumi**: Emergency Resistance II barrier activates when HP drops below 30%. |
 | **Light (Cahaya)** | **Suar**: +25% Holy Smite damage vs Undead monsters (Zombies, Skeletons, Withers). | **Foton**: +50% Holy Smite damage + heals player (+1.5 HP) when striking targets. |
 
-### 🖥️ 6. 100% Paper Native Dialog Interface (Zero Chest GUI)
-* **Main Skills Menu**: Displays current level, EXP progress bar, available Skill Points, active EXP boost multiplier, and quick navigation.
-* **Stat Allocation Dialog**: Multi-action buttons (`+1`, `+5`, `+10`) with live stat descriptions and current tier preview.
+### 🖥️ 5. 100% Paper Native Dialog Interface (Zero Chest GUI)
+* **Access Anywhere**: Open directly with `/skill` or seamlessly through the **ClarityEssentials** dashboard menu.
+* **Main Skills Menu**: Displays current level, EXP progress, available Skill Points, active EXP boost multiplier, and clean attribute overview.
+* **Clean & Native Look**: Bold dialog titles with initial capitals, clean body layout, and uncolored buttons for modern, native client integration.
+* **Stat Allocation Dialog**: Multi-action buttons (`+1`, `+5`, `+10`) with live stat descriptions.
 * **Native Custom Amount Text Dialog**: Input custom allocation numbers directly via native text input dialog (`DialogInput.text`).
 * **Elemental Masteries Showcase**: Detailed overview of all unlocked tiers, effects, and progression requirements.
 
-### 🌐 7. Multi-Language Support (ClarityLangCore Integration)
+### 🌐 6. Multi-Language Support (ClarityLangCore Integration)
 * Automatically hooks into **ClarityLangCore** for per-player dynamic language switching (`/lang`).
 * Includes 9 bundled language localizations:
   * English (`en_US`)
@@ -70,7 +67,7 @@ Reaching milestone levels (default: Level 25 for Tier 1, Level 50 for Tier 2) un
   * Russian (`ru_RU`)
 * Fully self-contained fallback system when running as a standalone plugin without ClarityLangCore.
 
-### 🔌 8. Developer API & Custom Events (Bridge to `ClarityRPG`)
+### 🔌 7. Developer API & Custom Events (Bridge to `ClarityRPG`)
 * Direct static access via `ClaritySkillsAPI` for external plugins.
 * Full suite of Bukkit custom events:
   * `PlayerSkillLevelUpEvent`: Fired when a player levels up.
@@ -168,9 +165,6 @@ effects:
   level_up_sound: "ui.toast.challenge_complete"
   play_tier_unlock_sound: true
   tier_unlock_sound: "ui.toast.challenge_complete"
-
-gui:
-  register_pause_screen: true
 ```
 
 ---

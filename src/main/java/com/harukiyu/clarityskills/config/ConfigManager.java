@@ -29,8 +29,6 @@ public class ConfigManager {
     private boolean playTierUnlockSound;
     private String tierUnlockSound;
 
-    private boolean registerPauseScreen;
-
     public ConfigManager(@NotNull ClaritySkills plugin) {
         this.plugin = plugin;
     }
@@ -60,8 +58,6 @@ public class ConfigManager {
         levelUpSound = config.getString("effects.level_up_sound", "ui.toast.challenge_complete");
         playTierUnlockSound = config.getBoolean("effects.play_tier_unlock_sound", true);
         tierUnlockSound = config.getString("effects.tier_unlock_sound", "ui.toast.challenge_complete");
-
-        registerPauseScreen = config.getBoolean("gui.register_pause_screen", true);
     }
 
     public long calculateRequiredExp(int currentLevel) {
@@ -139,9 +135,5 @@ public class ConfigManager {
 
     public String getTierUnlockSound() {
         return tierUnlockSound;
-    }
-
-    public boolean isRegisterPauseScreen() {
-        return registerPauseScreen;
     }
 }

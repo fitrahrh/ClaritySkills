@@ -39,7 +39,7 @@ public final class CommandHelper {
             }
 
             return totalMillis;
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             return 0;
         }
     }

@@ -1,6 +1,5 @@
 package com.harukiyu.clarityskills.dialog;
 
-import com.harukiyu.claritylangcore.api.ClarityLangAPI;
 import com.harukiyu.clarityskills.ClaritySkills;
 import com.harukiyu.clarityskills.api.model.ElementalTier;
 import com.harukiyu.clarityskills.api.model.StatType;
@@ -82,20 +81,6 @@ public class SkillDialogManager {
                     if (audience instanceof Player p) openElementalTiersDialog(p);
                 }, CALLBACK_OPTIONS))
                 .build());
-
-        // 3. Language settings (if ClarityLangCore installed)
-        if (LanguageHook.isClarityLangCorePresent()) {
-            buttons.add(ActionButton.builder(LanguageHook.getComponent("dialog.main.btn_language", player))
-                    .action(DialogAction.customClick((view, audience) -> {
-                        if (audience instanceof Player p) {
-                            p.closeDialog();
-                            try {
-                                ClarityLangAPI.openLanguageDialog(p);
-                            } catch (Throwable ignored) {}
-                        }
-                    }, CALLBACK_OPTIONS))
-                    .build());
-        }
 
         // Close Button
         ActionButton exitBtn = ActionButton.builder(LanguageHook.getComponent("dialog.general.btn_close", player))
@@ -287,7 +272,9 @@ public class SkillDialogManager {
         ConfigManager config = plugin.getConfigManager();
 
         Component title = LanguageHook.getComponent("dialog.elements.title", player);
-        Component body = LanguageHook.getComponent("dialog.elements.body", player);
+        Component body = LanguageHook.getComponent("dialog.elements.body", player,
+                Placeholder.unparsed("t1_req", String.valueOf(config.getTier1Threshold())),
+                Placeholder.unparsed("t2_req", String.valueOf(config.getTier2Threshold())));
 
         List<ActionButton> buttons = new ArrayList<>();
 
@@ -298,8 +285,8 @@ public class SkillDialogManager {
             ElementalTier t1 = ElementalTier.getTier1(element);
             ElementalTier t2 = ElementalTier.getTier2(element);
 
-            String t1Name = t1 != null ? LanguageHook.getRawString(t1.getNameKey(), LanguageHook.getEffectiveLanguageCode(player)) : "T1";
-            String t2Name = t2 != null ? LanguageHook.getRawString(t2.getNameKey(), LanguageHook.getEffectiveLanguageCode(player)) : "T2";
+            Component t1Comp = t1 != null ? LanguageHook.getComponent(t1.getNameKey(), player) : Component.text("T1");
+            Component t2Comp = t2 != null ? LanguageHook.getComponent(t2.getNameKey(), player) : Component.text("T2");
 
             Component btnLabel = LanguageHook.getComponent("dialog.elements.entry", player,
                     Placeholder.component("element", LanguageHook.getComponent(element.getNameKey(), player)),
@@ -307,9 +294,9 @@ public class SkillDialogManager {
                     Placeholder.unparsed("level", String.valueOf(level)));
 
             Component tooltip = LanguageHook.getComponent("dialog.elements.entry_tooltip", player,
-                    Placeholder.unparsed("t1_name", t1Name != null ? t1Name : ""),
+                    Placeholder.component("t1_name", t1Comp),
                     Placeholder.unparsed("t1_req", String.valueOf(config.getTier1Threshold())),
-                    Placeholder.unparsed("t2_name", t2Name != null ? t2Name : ""),
+                    Placeholder.component("t2_name", t2Comp),
                     Placeholder.unparsed("t2_req", String.valueOf(config.getTier2Threshold())));
 
             buttons.add(ActionButton.builder(btnLabel)

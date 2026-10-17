@@ -6,18 +6,18 @@ import com.harukiyu.clarityskills.api.model.StatType;
 import com.harukiyu.clarityskills.config.ConfigManager;
 import com.harukiyu.clarityskills.data.PlayerSkillData;
 import com.harukiyu.clarityskills.hook.LanguageHook;
+import io.papermc.paper.command.brigadier.BasicCommand;
+import io.papermc.paper.command.brigadier.CommandSourceStack;
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.List;
 
-public class SkillCommand implements CommandExecutor, TabCompleter {
+public class SkillCommand implements BasicCommand {
     private final ClaritySkills plugin;
 
     public SkillCommand(@NotNull ClaritySkills plugin) {
@@ -25,15 +25,17 @@ public class SkillCommand implements CommandExecutor, TabCompleter {
     }
 
     @Override
-    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+    public void execute(@NotNull CommandSourceStack stack, @NotNull String[] args) {
+        CommandSender sender = stack.getSender();
+        if (sender == null) return;
         if (!(sender instanceof Player player)) {
             sender.sendMessage("Only players can use /skill menu.");
-            return true;
+            return;
         }
 
         if (args.length == 0 || args[0].equalsIgnoreCase("menu") || args[0].equalsIgnoreCase("gui")) {
             plugin.getDialogManager().openMainMenu(player);
-            return true;
+            return;
         }
 
         if (args[0].equalsIgnoreCase("info")) {
@@ -48,7 +50,7 @@ public class SkillCommand implements CommandExecutor, TabCompleter {
                     Placeholder.unparsed("req_exp", String.valueOf(reqExp)),
                     Placeholder.unparsed("points", String.valueOf(data.getSkillPoints())),
                     Placeholder.unparsed("boost", String.format("%.1fx", boost)));
-            return true;
+            return;
         }
 
         if (args[0].equalsIgnoreCase("stats")) {
@@ -70,19 +72,25 @@ public class SkillCommand implements CommandExecutor, TabCompleter {
                             Placeholder.unparsed("level", String.valueOf(level)));
                 }
             }
-            return true;
+            return;
         }
 
         LanguageHook.sendMessage(player, "command.skill.help");
-        return true;
     }
 
     @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
-        if (args.length == 1) {
-            List<String> list = List.of("menu", "info", "stats", "help");
-            return list.stream().filter(s -> s.startsWith(args[0].toLowerCase())).toList();
+    public @NotNull Collection<String> suggest(@NotNull CommandSourceStack stack, @NotNull String[] args) {
+        if (args.length <= 1) {
+            String prefix = args.length == 0 ? "" : args[0].toLowerCase();
+            return List.of("menu", "info", "stats", "help").stream()
+                    .filter(s -> s.startsWith(prefix))
+                    .toList();
         }
         return List.of();
+    }
+
+    @Override
+    public @Nullable String permission() {
+        return "clarityskills.use";
     }
 }

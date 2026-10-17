@@ -25,7 +25,7 @@ dependencies {
     compileOnly("net.luckperms:api:5.4")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7.1")
 
-    // Testing & YAML Validation
+    testImplementation("io.papermc.paper:paper-api:26.3.build.200-stable")
     testImplementation("org.yaml:snakeyaml:2.2")
     testImplementation("net.kyori:adventure-text-minimessage:4.17.0")
     testImplementation("net.kyori:adventure-text-serializer-plain:4.17.0")

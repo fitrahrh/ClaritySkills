@@ -93,55 +93,66 @@ boost:
 
 dialog:
   general:
-    btn_close: "<red>Tutup</red>"
-    btn_back: "<yellow>Kembali</yellow>"
-    btn_confirm: "<green>Konfirmasi</green>"
-    btn_cancel: "<red>Batal</red>"
+    btn_close: "Tutup"
+    btn_back: "Kembali"
+    btn_confirm: "Konfirmasi"
+    btn_cancel: "Batal"
   main:
-    title: "CLARITY SKILLS"
+    title: "<bold>Clarity Skills</bold>"
     body: |
-      <gold><bold>Ringkasan Skill Pemain</bold></gold>
-      <gray>Level:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max_level></gray>
-      <gray>EXP:</gray> <green><current_exp></green> <dark_gray>/</dark_gray> <gray><req_exp></gray> <aqua>(<exp_percent>%)</aqua>
-      <gray>Skill Point Tersedia:</gray> <gold><bold><points></bold></gold>
-      <gray>EXP Boost Aktif:</gray> <light_purple><boost></light_purple>
+      <gray>Level Anda:</gray> <white><level></white><dark_gray>/</dark_gray><white><max_level></white>
 
-      <yellow><bold>Atribut Utama:</bold></yellow>
-      <red>Attack (ATK):</red> <white><atk></white> | <light_purple>Magic (MATK):</light_purple> <white><matk></white> | <green>Defense (DEF):</green> <white><def></white>
+      <gray>Progres EXP:</gray> <white><current_exp></white><dark_gray>/</dark_gray><white><req_exp></white> <dark_gray>[<aqua><exp_percent>%</aqua>]</dark_gray>
 
-      <aqua><bold>Atribut Elemen:</bold></aqua>
-      <gold>Api:</gold> <white><fire></white> | <aqua>Angin:</aqua> <white><wind></white> | <blue>Air:</blue> <white><water></white> | <dark_green>Tanah:</dark_green> <white><earth></white> | <yellow>Cahaya:</yellow> <white><light></white>
-    btn_allocate: "<green><bold>Tingkatkan Atribut</bold></green>"
+      <white>Poin Tersedia:</white> <gold><bold><points></bold></gold>
+      <white>Boost Aktif:</white> <yellow><boost></yellow>
+
+      <white>Atribut Utama:</white>
+      <gray> Serangan:</gray> <white><atk></white>  <gray> Sihir:</gray> <white><matk></white>  <gray> Pertahanan:</gray> <white><def></white>
+
+      <white>Atribut Elemen:</white>
+      <gray> Api:</gray> <white><fire></white>  <gray> Angin:</gray> <white><wind></white>  <gray> Air:</gray> <white><water></white>
+      <gray> Tanah:</gray> <white><earth></white>  <gray> Cahaya:</gray> <white><light></white>
+    btn_allocate: "Tingkatkan Atribut"
     btn_allocate_tooltip: "<gray>Alokasikan skill point untuk meningkatkan atribut karaktermu."
-    btn_elements: "<aqua><bold>Tahapan Elemen</bold></aqua>"
+    btn_elements: "Tahapan Elemen"
     btn_elements_tooltip: "<gray>Lihat tahapan tingkatan elemen dan kekuatan spesial."
-    btn_language: "<yellow>Pengaturan Bahasa</yellow>"
   attributes:
-    title: "ALOKASI ATRIBUT"
-    body: "<gray>Pilih atribut untuk mengalokasikan skill point.\nPoin Tersedia: <gold><bold><points></bold></gold>"
-    stat_entry: "<stat> <dark_gray>[<yellow>Lvl <level><dark_gray>/<gray><max><dark_gray>]</dark_gray>"
+    title: "<bold>Alokasi Atribut</bold>"
+    body: |
+      <gray>Pilih atribut di bawah untuk mengalokasikan poin.</gray>
+      <gray>Poin Tersedia:</gray> <gold><bold><points></bold></gold>
+    stat_entry: "<stat> [Lvl <level>/<max>]"
   upgrade:
-    title: "TINGKATKAN ATRIBUT"
+    title: "<bold>Tingkatkan Atribut</bold>"
     body: |
       <stat>
-      <desc>
-      <gray>Level Saat Ini:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max></gray>
-      <gray>Biaya Poin:</gray> <gold><cost> Poin</gold>
+      <gray><desc></gray>
+
+      <gray>Level Saat Ini:</gray> <white><level></white><dark_gray>/</dark_gray><gray><max></gray>
+      <gray>Biaya per Level:</gray> <yellow><cost> Poin</yellow>
       <gray>Poin Tersedia:</gray> <gold><bold><points></bold></gold>
-    btn_plus_1: "<green>+1 Poin</green>"
-    btn_plus_5: "<green>+5 Poin</green>"
-    btn_plus_10: "<green>+10 Poin</green>"
-    btn_custom: "<aqua>Jumlah Bebas...</aqua>"
+    btn_plus_1: "+1 Poin"
+    btn_plus_5: "+5 Poin"
+    btn_plus_10: "+10 Poin"
+    btn_custom: "Jumlah Bebas..."
   custom:
-    title: "ALOKASI BEBAS"
-    body: "<gray>Masukkan jumlah skill point yang ingin dialokasikan ke <stat>:"
+    title: "<bold>Alokasi Kustom</bold>"
+    body: "<gray>Masukkan jumlah skill point yang ingin dialokasikan ke <stat>:</gray>"
     label: "Jumlah Poin"
     invalid_amount: "<prefix><red>Jumlah tidak valid! Harap masukkan angka bulat positif."
   elements:
-    title: "TAHAPAN ELEMEN"
-    body: "<gray>Atribut elemen membuka kemampuan khusus pada level tinggi:\n<yellow>Syarat Tingkat 1:</yellow> Level 25\n<gold>Syarat Tingkat 2:</gold> Level 50"
-    entry: "<element> <dark_gray>-</dark_gray> <tier> <dark_gray>(Lvl <level>)</dark_gray>"
-    entry_tooltip: "<gray>Tahapan:\n<yellow>• <t1_name> (Syarat Lvl <t1_req>)\n<gold>• <t2_name> (Syarat Lvl <t2_req>)</gray>"
+    title: "<bold>Penguasaan Elemen</bold>"
+    body: |
+      <white>Atribut elemen membuka tingkatan kemampuan khusus pada level tinggi.</white>
+
+      <white>1. Level <t1_req></white>
+      <white>2. Level <t2_req></white>
+    entry: "<element> - <tier> (Lvl <level>)"
+    entry_tooltip: |
+      <gray>Tahapan Milestone:</gray>
+      <gray>• <t1_name> (Syarat Lvl <t1_req>)</gray>
+      <gray>• <t2_name> (Syarat Lvl <t2_req>)</gray>
 
 command:
   skill:
@@ -151,6 +162,7 @@ command:
     stat_element_entry: "<gray>• <stat>: <yellow><level></yellow> <dark_gray>[<tier><dark_gray>]"
     help: "<prefix><gray>Ketik <yellow>/skill</yellow> untuk membuka dialog skill, atau <yellow>/skill info</yellow> / <yellow>/skill stats</yellow>."
   admin:
+    usage: "<prefix><red>Penggunaan: <yellow><usage></yellow>"
     reloaded: "<prefix><green>Konfigurasi dan bahasa ClaritySkills berhasil dimuat ulang."
     player_not_found: "<prefix><red>Pemain <yellow><player></yellow> tidak ditemukan atau sedang offline."
     exp_given: "<prefix><green>Memberikan <yellow><amount> EXP</yellow> ke <gold><player></gold> (Boost aktif: <aqua><boosted></aqua>)."
@@ -158,13 +170,20 @@ command:
     exp_set: "<prefix><green>Mengatur EXP <gold><player></gold> menjadi <yellow><amount></yellow>."
     exp_reset: "<prefix><green>Mereset EXP <gold><player></gold> menjadi 0."
     point_given: "<prefix><green>Memberikan <gold><amount> Skill Point</gold> ke <yellow><player></yellow>."
+    points_given: "<prefix><green>Memberikan <gold><amount> Skill Point</gold> ke <yellow><player></yellow>."
     point_taken: "<prefix><green>Mengurangi <gold><amount> Skill Point</gold> dari <yellow><player></yellow>."
+    points_taken: "<prefix><green>Mengurangi <gold><amount> Skill Point</gold> dari <yellow><player></yellow>."
     point_set: "<prefix><green>Mengatur Skill Point <yellow><player></yellow> menjadi <gold><amount></gold>."
+    points_set: "<prefix><green>Mengatur Skill Point <yellow><player></yellow> menjadi <gold><amount></gold>."
     point_reset: "<prefix><green>Mereset Skill Point <yellow><player></yellow> menjadi 0."
+    points_reset: "<prefix><green>Mereset Skill Point <yellow><player></yellow> menjadi 0."
     boost_given: "<prefix><green>Memberikan EXP Boost <gold><multiplier></gold> ke <yellow><player></yellow> selama <aqua><duration></aqua>."
+    boost_cleared: "<prefix><green>Menghapus EXP Boost pribadi milik <yellow><player></yellow>."
     boost_cleared_player: "<prefix><green>Menghapus EXP Boost pribadi milik <yellow><player></yellow>."
     boost_global_set: "<prefix><green>EXP Boost Global sebesar <gold><multiplier></gold> diatur selama <aqua><duration></aqua>."
     boost_global_cleared: "<prefix><green>EXP Boost Global telah dibersihkan."
+    boost_list_player: "<prefix><gray>Boost Pemain <yellow><player></yellow>: <gold><multiplier></gold> <gray>(Sisa: <aqua><duration></aqua>)</gray>"
+    boost_list_global: "<prefix><gray>Boost Global: <gold><multiplier></gold> <gray>(Sisa: <aqua><duration></aqua>)</gray>"
     level_set: "<prefix><green>Mengatur level <yellow><player></yellow> menjadi <gold><level></gold>."
     player_reset: "<prefix><green>Mereset data pemain <yellow><player></yellow> (Mode: <aqua><mode></aqua>)."
     help: |

@@ -93,55 +93,66 @@ boost:
 
 dialog:
   general:
-    btn_close: "<red>关闭</red>"
-    btn_back: "<yellow>返回</yellow>"
-    btn_confirm: "<green>确认</green>"
-    btn_cancel: "<red>取消</red>"
+    btn_close: "关闭"
+    btn_back: "返回"
+    btn_confirm: "确认"
+    btn_cancel: "取消"
   main:
-    title: "CLARITY SKILLS"
+    title: "<bold>Clarity Skills</bold>"
     body: |
-      <gold><bold>玩家技能概览</bold></gold>
-      <gray>等级:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max_level></gray>
-      <gray>经验值:</gray> <green><current_exp></green> <dark_gray>/</dark_gray> <gray><req_exp></gray> <aqua>(<exp_percent>%)</aqua>
-      <gray>可用技能点:</gray> <gold><bold><points></bold></gold>
-      <gray>经验加成状态:</gray> <light_purple><boost></light_purple>
+      <gray>当前等级:</gray> <white><level></white><dark_gray>/</dark_gray><white><max_level></white>
 
-      <yellow><bold>基础属性:</bold></yellow>
-      <red>物理攻击 (ATK):</red> <white><atk></white> | <light_purple>魔法攻击 (MATK):</light_purple> <white><matk></white> | <green>防御减伤 (DEF):</green> <white><def></white>
+      <gray>经验进度:</gray> <white><current_exp></white><dark_gray>/</dark_gray><white><req_exp></white> <dark_gray>[<aqua><exp_percent>%</aqua>]</dark_gray>
 
-      <aqua><bold>元素属性:</bold></aqua>
-      <gold>火焰:</gold> <white><fire></white> | <aqua>疾风:</aqua> <white><wind></white> | <blue>水流:</blue> <white><water></white> | <dark_green>大地:</dark_green> <white><earth></white> | <yellow>圣光:</yellow> <white><light></white>
-    btn_allocate: "<green><bold>分配属性点</bold></green>"
+      <white>可用技能点:</white> <gold><bold><points></bold></gold>
+      <white>经验加成:</white> <yellow><boost></yellow>
+
+      <white>基础属性:</white>
+      <gray> 攻击:</gray> <white><atk></white>  <gray> 魔法:</gray> <white><matk></white>  <gray> 防御:</gray> <white><def></white>
+
+      <white>元素属性:</white>
+      <gray> 火焰:</gray> <white><fire></white>  <gray> 疾风:</gray> <white><wind></white>  <gray> 水流:</gray> <white><water></white>
+      <gray> 大地:</gray> <white><earth></white>  <gray> 圣光:</gray> <white><light></white>
+    btn_allocate: "分配属性点"
     btn_allocate_tooltip: "<gray>消耗技能点来增强角色属性。"
-    btn_elements: "<aqua><bold>元素阶位掌控</bold></aqua>"
+    btn_elements: "元素阶位掌控"
     btn_elements_tooltip: "<gray>查看元素属性的晋升里程碑与阶位特权。"
-    btn_language: "<yellow>语言切换</yellow>"
   attributes:
-    title: "属性点数分配"
-    body: "<gray>请选择需要提升的属性。\n当前可用点数: <gold><bold><points></bold></gold>"
-    stat_entry: "<stat> <dark_gray>[<yellow>等级 <level><dark_gray>/<gray><max><dark_gray>]</dark_gray>"
+    title: "<bold>属性点数分配</bold>"
+    body: |
+      <gray>请选择需要提升的属性。</gray>
+      <gray>可用点数:</gray> <gold><bold><points></bold></gold>
+    stat_entry: "<stat> [等级 <level>/<max>]"
   upgrade:
-    title: "升级属性"
+    title: "<bold>升级属性</bold>"
     body: |
       <stat>
-      <desc>
-      <gray>当前等级:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max></gray>
-      <gray>消耗点数:</gray> <gold><cost> 点/级</gold>
+      <gray><desc></gray>
+
+      <gray>当前等级:</gray> <white><level></white><dark_gray>/</dark_gray><gray><max></gray>
+      <gray>每级消耗:</gray> <yellow><cost> 点</yellow>
       <gray>剩余点数:</gray> <gold><bold><points></bold></gold>
-    btn_plus_1: "<green>+1 点</green>"
-    btn_plus_5: "<green>+5 点</green>"
-    btn_plus_10: "<green>+10 点</green>"
-    btn_custom: "<aqua>自定义数量...</aqua>"
+    btn_plus_1: "+1 点"
+    btn_plus_5: "+5 点"
+    btn_plus_10: "+10 点"
+    btn_custom: "自定义数量..."
   custom:
-    title: "自定义点数加点"
-    body: "<gray>请输入要分配至 <stat> 的点数数量:"
+    title: "<bold>自定义点数加点</bold>"
+    body: "<gray>请输入要分配至 <stat> 的点数数量:</gray>"
     label: "分配点数"
     invalid_amount: "<prefix><red>输入的点数无效！请输入正整数。"
   elements:
-    title: "元素阶位总览"
-    body: "<gray>元素属性在达到高等级时将解锁强力特权:\n<yellow>一阶门槛:</yellow> 25 级\n<gold>二阶门槛:</gold> 50 级"
-    entry: "<element> <dark_gray>-</dark_gray> <tier> <dark_gray>(等级 <level>)</dark_gray>"
-    entry_tooltip: "<gray>解锁要求:\n<yellow>• <t1_name> (需等级 <t1_req>)\n<gold>• <t2_name> (需等级 <t2_req>)</gray>"
+    title: "<bold>元素阶位总览</bold>"
+    body: |
+      <white>元素属性在达到高等级时将解锁强力特权。</white>
+
+      <white>1. 等级 <t1_req></white>
+      <white>2. 等级 <t2_req></white>
+    entry: "<element> - <tier> (等级 <level>)"
+    entry_tooltip: |
+      <gray>解锁要求:</gray>
+      <gray>• <t1_name> (需等级 <t1_req>)</gray>
+      <gray>• <t2_name> (需等级 <t2_req>)</gray>
 
 command:
   skill:
@@ -151,6 +162,7 @@ command:
     stat_element_entry: "<gray>• <stat>: <yellow><level></yellow> <dark_gray>[<tier><dark_gray>]"
     help: "<prefix><gray>使用 <yellow>/skill</yellow> 打开技能面板，或使用 <yellow>/skill info</yellow> / <yellow>/skill stats</yellow>。"
   admin:
+    usage: "<prefix><red>用法: <yellow><usage></yellow>"
     reloaded: "<prefix><green>ClaritySkills 配置文件与多语言字典已成功重新加载。"
     player_not_found: "<prefix><red>玩家 <yellow><player></yellow> 不在线。"
     exp_given: "<prefix><green>已给予 <gold><player></gold> <yellow><amount> 点经验</yellow> (加成生效: <aqua><boosted></aqua>)。"
@@ -158,15 +170,22 @@ command:
     exp_set: "<prefix><green>已将 <gold><player></gold> 的经验值设为 <yellow><amount></yellow>。"
     exp_reset: "<prefix><green>已将 <gold><player></gold> 的经验重置为 0。"
     point_given: "<prefix><green>已给予 <yellow><player></yellow> <gold><amount> 技能点</gold>。"
+    points_given: "<prefix><green>已给予 <yellow><player></yellow> <gold><amount> 技能点</gold>。"
     point_taken: "<prefix><green>已扣除 <yellow><player></yellow> <gold><amount> 技能点</gold>。"
+    points_taken: "<prefix><green>已扣除 <yellow><player></yellow> <gold><amount> 技能点</gold>。"
     point_set: "<prefix><green>已将 <yellow><player></yellow> 的技能点设为 <gold><amount></gold>。"
+    points_set: "<prefix><green>已将 <yellow><player></yellow> 的技能点设为 <gold><amount></gold>。"
     point_reset: "<prefix><green>已将 <yellow><player></yellow> 的技能点重置为 0。"
+    points_reset: "<prefix><green>已将 <yellow><player></yellow> 的技能点重置为 0。"
     boost_given: "<prefix><green>已为 <yellow><player></yellow> 设置持续 <aqua><duration></aqua> 的 <gold><multiplier></gold> 经验加成。"
+    boost_cleared: "<prefix><green>已清除玩家 <yellow><player></yellow> 的个人经验加成。"
     boost_cleared_player: "<prefix><green>已清除玩家 <yellow><player></yellow> 的个人经验加成。"
     boost_global_set: "<prefix><green>全服经验加成已设为 <gold><multiplier></gold>，持续 <aqua><duration></aqua>。"
     boost_global_cleared: "<prefix><green>全服经验加成已清除。"
+    boost_list_player: "<prefix><gray>玩家 <yellow><player></yellow> 加成: <gold><multiplier></gold> <gray>(剩余: <aqua><duration></aqua>)</gray>"
+    boost_list_global: "<prefix><gray>全局加成: <gold><multiplier></gold> <gray>(剩余: <aqua><duration></aqua>)</gray>"
     level_set: "<prefix><green>已将 <yellow><player></yellow> 的等级设为 <gold><level></gold>。"
-    player_reset: "<prefix><green>已重置玩家 <yellow><player></yellow> 的数据 (模式: <aqua><mode></aqua>)。"
+    player_reset: "<prefix><green>已重置玩家 <yellow><player></yellow> 的数据 (模式: <aqua><mode></aqua>)."
     help: |
       <prefix><gold><bold>ClaritySkills 管理员指令帮助:</bold></gold>
       <yellow>/skilladmin exp give <玩家> <数量> [是否加成: true|false]</yellow>

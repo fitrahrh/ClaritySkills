@@ -3,6 +3,7 @@ package com.harukiyu.clarityskills.data;
 import com.harukiyu.clarityskills.ClaritySkills;
 import com.harukiyu.clarityskills.api.model.StatType;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.logging.Level;
 
 public class StorageManager {
     private final ClaritySkills plugin;
@@ -50,11 +52,12 @@ public class StorageManager {
         data.setTotalExp(config.getLong("totalExp", 0));
         data.setSkillPoints(config.getInt("skillPoints", 0));
 
-        if (config.isConfigurationSection("stats")) {
-            for (String key : config.getConfigurationSection("stats").getKeys(false)) {
+        ConfigurationSection statsSec = config.getConfigurationSection("stats");
+        if (statsSec != null) {
+            for (String key : statsSec.getKeys(false)) {
                 StatType stat = StatType.fromId(key);
                 if (stat != null) {
-                    data.setStat(stat, config.getInt("stats." + key, 0));
+                    data.setStat(stat, statsSec.getInt(key, 0));
                 }
             }
         }
@@ -92,7 +95,7 @@ public class StorageManager {
                 config.save(file);
                 data.setDirty(false);
             } catch (IOException e) {
-                plugin.getLogger().warning("Failed to save player data for " + uuid + ": " + e.getMessage());
+                plugin.getLogger().log(Level.WARNING, "Failed to save player data for {0}: {1}", new Object[]{uuid, e.getMessage()});
             }
         };
 

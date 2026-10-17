@@ -14,10 +14,11 @@ import com.harukiyu.clarityskills.manager.ExpBoostManager;
 import com.harukiyu.clarityskills.manager.SkillManager;
 import io.papermc.paper.threadedregions.scheduler.ScheduledTask;
 import org.bukkit.Bukkit;
-import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 public class ClaritySkills extends JavaPlugin {
     private static ClaritySkills instance;
@@ -53,20 +54,9 @@ public class ClaritySkills extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerConnectionListener(this), this);
         getServer().getPluginManager().registerEvents(new StatCombatListener(this), this);
 
-        // 5. Register Commands
-        PluginCommand skillCmd = getCommand("skill");
-        if (skillCmd != null) {
-            SkillCommand executor = new SkillCommand(this);
-            skillCmd.setExecutor(executor);
-            skillCmd.setTabCompleter(executor);
-        }
-
-        PluginCommand adminCmd = getCommand("skilladmin");
-        if (adminCmd != null) {
-            SkillAdminCommand executor = new SkillAdminCommand(this);
-            adminCmd.setExecutor(executor);
-            adminCmd.setTabCompleter(executor);
-        }
+        // 5. Register Commands (Paper 26.3 Native BasicCommand)
+        registerCommand("skill", "Open skill status and allocation menu", List.of("skills"), new SkillCommand(this));
+        registerCommand("skilladmin", "Admin commands for skills, exp, points and boost", List.of("skillsadmin", "skadmin", "sa"), new SkillAdminCommand(this));
 
         // 6. PlaceholderAPI Expansion
         if (Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
@@ -83,7 +73,7 @@ public class ClaritySkills extends JavaPlugin {
                 TimeUnit.MINUTES
         );
 
-        getLogger().info(getName() + " v" + getPluginMeta().getVersion() + " has been enabled!");
+        getLogger().log(Level.INFO, "{0} v{1} has been enabled!", new Object[]{getName(), getPluginMeta().getVersion()});
     }
 
     @Override
@@ -96,7 +86,7 @@ public class ClaritySkills extends JavaPlugin {
             storageManager.saveAll(false);
         }
 
-        getLogger().info(getName() + " has been disabled!");
+        getLogger().log(Level.INFO, "{0} has been disabled!", getName());
     }
 
     public static ClaritySkills getInstance() {
