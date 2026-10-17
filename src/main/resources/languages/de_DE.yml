@@ -1,0 +1,186 @@
+prefix: "<gradient:#FFAA00:#FF5555>[ClaritySkills]</gradient> <gray>"
+
+general:
+  no_permission: "<prefix><red>Du hast keine Berechtigung, diesen Befehl auszuführen."
+
+stat:
+  attack:
+    name: "<red>Angriff</red>"
+    desc: "<gray>Erhöht den verursachten physischen Schaden."
+  magic:
+    name: "<light_purple>Magie</light_purple>"
+    desc: "<gray>Verstärkt magische Kraft und Zauberpotenz."
+  defense:
+    name: "<green>Verteidigung</green>"
+    desc: "<gray>Verringert erlittenen Schaden durch gegnerische Angriffe."
+  fire:
+    name: "<gold>Feuer</gold>"
+    desc: "<gray>Beherrscht Flammen, um Gegner zu verbrennen und Explosionen auszulösen."
+  wind:
+    name: "<aqua>Wind</aqua>"
+    desc: "<gray>Nutzt Stürme für Agilität und Fallschadenreduzierung."
+  water:
+    name: "<blue>Wasser</blue>"
+    desc: "<gray>Kanalisiert Meeresströmungen für aquatische Vitalität und Frostverlangsamung."
+  earth:
+    name: "<dark_green>Erde</dark_green>"
+    desc: "<gray>Schmiedet felsenfeste Rüstung und Schutzschilde in brenzligen Momenten."
+  light:
+    name: "<yellow>Licht</yellow>"
+    desc: "<gray>Erweckt heilige Energie zur Vernichtung von Untoten und Selbstheilung."
+  insufficient_points: "<prefix><red>Nicht genügend Fertigkeitspunkte! Benötigt: <yellow><required></yellow>, Verfügbar: <gold><available></gold>."
+  max_reached: "<prefix><red>Attribut <stat> hat bereits die Maximalstufe erreicht!"
+  allocated: "<prefix><green><yellow>+<amount></yellow> Punkte auf <stat> verteilt! Aktuelle Stufe: <gold><level></gold>."
+
+tier:
+  none:
+    name: "<dark_gray>Keine</dark_gray>"
+    desc: "<dark_gray>Noch keine Elementarstufe freigeschaltet."
+  fire:
+    blaze:
+      name: "<gold>Blaze-Stufe</gold>"
+      desc: "<gray>Entzündet Ziele bei Treffern für 3 Sekunden."
+    inferno:
+      name: "<red><bold>Inferno-Stufe</bold></red>"
+      desc: "<gray>Entzündet Ziele für 7 Sekunden mit +3 explosivem Feuerschaden."
+  wind:
+    badai:
+      name: "<aqua>Badai-Stufe</aqua>"
+      desc: "<gray>Reduziert Fallschaden um 50% und verleiht Schnelligkeit."
+    storm:
+      name: "<dark_aqua><bold>Storm-Stufe</bold></dark_aqua>"
+      desc: "<gray>Vollständige Immunität gegen Fallschaden und Sturmhast."
+  water:
+    gelombang:
+      name: "<blue>Gelombang-Stufe</blue>"
+      desc: "<gray>Erhöhte Vitalität und Delfingunst in den Tiefen des Wassers."
+    ice:
+      name: "<aqua><bold>Ice-Stufe</bold></aqua>"
+      desc: "<gray>Belegt Gegner mit extremer Kälte und Verlangsamung."
+  earth:
+    megalit:
+      name: "<dark_green>Megalit-Stufe</dark_green>"
+      desc: "<gray>Verleiht Rüstungshärte und dämpft Rückstoß ab."
+    bumi:
+      name: "<green><bold>Bumi-Stufe</bold></green>"
+      desc: "<gray>Aktiviert Resistenz-Notfallschild, wenn die Gesundheit unter 30% fällt."
+  light:
+    suar:
+      name: "<yellow>Suar-Stufe</yellow>"
+      desc: "<gray>Verursacht +25% heiligen Zusatzschaden gegen untote Monster."
+    foton:
+      name: "<white><bold>Foton-Stufe</bold></white>"
+      desc: "<gray>Verursacht +50% heiligen Schaden und regeneriert Leben bei Treffern."
+  unlocked_title: "<yellow><bold>STUFE FREIGESCHALTET!</bold></yellow>"
+  unlocked_subtitle: "<gray><tier> für Element <element> gemeistert!"
+  unlocked_broadcast: "<prefix><gold><player></gold> hat <tier> für <element> freigeschaltet!"
+
+level:
+  max_reached: "<prefix><yellow>Du hast bereits die Maximalstufe erreicht!"
+  up_title: "<gold><bold>STUFENAUFSTIEG!</bold></gold>"
+  up_subtitle: "<gray>Stufe <yellow><level></yellow> erreicht! +<points> Punkte."
+  up_message: "<prefix><green>Glückwunsch! Du bist zu Stufe <yellow><level></yellow> aufgestiegen und hast <gold>+<points> Fertigkeitspunkte</gold> erhalten!"
+
+exp:
+  received: "<prefix><green><yellow>+<amount> EXP</yellow> erhalten <gray>(Verstärker: <aqua><multiplier></aqua>).</gray>"
+
+point:
+  received: "<prefix><green>Du hast <gold>+<amount> Fertigkeitspunkte</gold> erhalten!"
+
+boost:
+  received: "<prefix><green>Du hast einen EXP-Boost von <gold><multiplier></gold> für <yellow><duration></yellow> erhalten!"
+  global_broadcast: "<prefix><gold><bold>GLOBALER BOOST!</bold></gold> EXP-Multiplikator <yellow><multiplier></yellow> ist für <aqua><duration></aqua> aktiv!"
+
+dialog:
+  general:
+    btn_close: "<red>Schließen</red>"
+    btn_back: "<yellow>Zurück</yellow>"
+    btn_confirm: "<green>Bestätigen</green>"
+    btn_cancel: "<red>Abbrechen</red>"
+  main:
+    title: "CLARITY SKILLS"
+    body: |
+      <gold><bold>Spieler-Fertigkeiten Übersicht</bold></gold>
+      <gray>Stufe:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max_level></gray>
+      <gray>EXP:</gray> <green><current_exp></green> <dark_gray>/</dark_gray> <gray><req_exp></gray> <aqua>(<exp_percent>%)</aqua>
+      <gray>Verfügbare Punkte:</gray> <gold><bold><points></bold></gold>
+      <gray>Aktiver EXP-Boost:</gray> <light_purple><boost></light_purple>
+
+      <yellow><bold>Grundattribute:</bold></yellow>
+      <red>Angriff (ATK):</red> <white><atk></white> | <light_purple>Magie (MATK):</light_purple> <white><matk></white> | <green>Verteidigung (DEF):</green> <white><def></white>
+
+      <aqua><bold>Elementar-Attribute:</bold></aqua>
+      <gold>Feuer:</gold> <white><fire></white> | <aqua>Wind:</aqua> <white><wind></white> | <blue>Wasser:</blue> <white><water></white> | <dark_green>Erde:</dark_green> <white><earth></white> | <yellow>Licht:</yellow> <white><light></white>
+    btn_allocate: "<green><bold>Punkte Verteilen</bold></green>"
+    btn_allocate_tooltip: "<gray>Verteile Fertigkeitspunkte auf deine Attribute."
+    btn_elements: "<aqua><bold>Elementarstufen</bold></aqua>"
+    btn_elements_tooltip: "<gray>Betrachte Elementar-Meilensteine und Spezialkräfte."
+    btn_language: "<yellow>Spracheinstellungen</yellow>"
+  attributes:
+    title: "ATTRIBUT-VERTEILUNG"
+    body: "<gray>Wähle ein Attribut zum Verbessern aus.\nVerfügbare Punkte: <gold><bold><points></bold></gold>"
+    stat_entry: "<stat> <dark_gray>[<yellow>Stf <level><dark_gray>/<gray><max><dark_gray>]</dark_gray>"
+  upgrade:
+    title: "ATTRIBUT VERBESSERN"
+    body: |
+      <stat>
+      <desc>
+      <gray>Aktuelle Stufe:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max></gray>
+      <gray>Kosten pro Punkt:</gray> <gold><cost> Punkt(e)</gold>
+      <gray>Verfügbare Punkte:</gray> <gold><bold><points></bold></gold>
+    btn_plus_1: "<green>+1 Punkt</green>"
+    btn_plus_5: "<green>+5 Punkte</green>"
+    btn_plus_10: "<green>+10 Punkte</green>"
+    btn_custom: "<aqua>Eigene Menge...</aqua>"
+  custom:
+    title: "INDIVIDUELLE VERTEILUNG"
+    body: "<gray>Gib die Anzahl der Punkte ein, die du auf <stat> verteilen möchtest:"
+    label: "Punkteanzahl"
+    invalid_amount: "<prefix><red>Ungültige Menge eingegeben! Bitte eine positive ganze Zahl angeben."
+  elements:
+    title: "ELEMENTARSTUFEN"
+    body: "<gray>Elementar-Attribute schalten auf hohen Stufen Spezialkräfte frei:\n<yellow>Meilenstein Stufe 1:</yellow> Stufe 25\n<gold>Meilenstein Stufe 2:</gold> Stufe 50"
+    entry: "<element> <dark_gray>-</dark_gray> <tier> <dark_gray>(Stf <level>)</dark_gray>"
+    entry_tooltip: "<gray>Anforderungen:\n<yellow>• <t1_name> (Benötigt Stf <t1_req>)\n<gold>• <t2_name> (Benötigt Stf <t2_req>)</gray>"
+
+command:
+  skill:
+    info: "<prefix><gray>Stufe: <yellow><level></yellow> | EXP: <green><exp></green>/<req_exp> | Punkte: <gold><points></gold> | Boost: <aqua><boost></aqua>"
+    stats_header: "<prefix><gold><bold>=== Deine Attribute ===</bold></gold>"
+    stat_core_entry: "<gray>• <stat>: <yellow><level></yellow>"
+    stat_element_entry: "<gray>• <stat>: <yellow><level></yellow> <dark_gray>[<tier><dark_gray>]"
+    help: "<prefix><gray>Nutze <yellow>/skill</yellow>, um das Fertigkeitenmenü zu öffnen, oder <yellow>/skill info</yellow> / <yellow>/skill stats</yellow>."
+  admin:
+    reloaded: "<prefix><green>ClaritySkills Konfiguration und Sprachdateien neu geladen."
+    player_not_found: "<prefix><red>Spieler <yellow><player></yellow> wurde nicht online gefunden."
+    exp_given: "<prefix><green><yellow><amount> EXP</yellow> an <gold><player></gold> vergeben (Boost: <aqua><boosted></aqua>)."
+    exp_taken: "<prefix><green><yellow><amount> EXP</yellow> von <gold><player></gold> abgezogen."
+    exp_set: "<prefix><green>EXP von <gold><player></gold> auf <yellow><amount></yellow> gesetzt."
+    exp_reset: "<prefix><green>EXP von <gold><player></gold> auf 0 zurückgesetzt."
+    point_given: "<prefix><green><gold><amount> Fertigkeitspunkte</gold> an <yellow><player></yellow> vergeben."
+    point_taken: "<prefix><green><gold><amount> Fertigkeitspunkte</gold> von <yellow><player></yellow> abgezogen."
+    point_set: "<prefix><green>Fertigkeitspunkte von <yellow><player></yellow> auf <gold><amount></gold> gesetzt."
+    point_reset: "<prefix><green>Fertigkeitspunkte von <yellow><player></yellow> auf 0 zurückgesetzt."
+    boost_given: "<prefix><green>EXP-Boost von <gold><multiplier></gold> an <yellow><player></yellow> für <aqua><duration></aqua> vergeben."
+    boost_cleared_player: "<prefix><green>Persönlicher EXP-Boost für <yellow><player></yellow> entfernt."
+    boost_global_set: "<prefix><green>Globaler EXP-Boost von <gold><multiplier></gold> für <aqua><duration></aqua> festgelegt."
+    boost_global_cleared: "<prefix><green>Globaler EXP-Boost wurde aufgehoben."
+    level_set: "<prefix><green>Stufe von <yellow><player></yellow> auf <gold><level></gold> gesetzt."
+    player_reset: "<prefix><green>Spielerdaten von <yellow><player></yellow> zurückgesetzt (Modus: <aqua><mode></aqua>)."
+    help: |
+      <prefix><gold><bold>ClaritySkills Administrator Hilfe:</bold></gold>
+      <yellow>/skilladmin exp give <Spieler> <Menge> [Boost: true|false]</yellow>
+      <yellow>/skilladmin exp take <Spieler> <Menge></yellow>
+      <yellow>/skilladmin exp set <Spieler> <Menge></yellow>
+      <yellow>/skilladmin exp reset <Spieler></yellow>
+      <yellow>/skilladmin point give <Spieler> <Menge></yellow>
+      <yellow>/skilladmin point take <Spieler> <Menge></yellow>
+      <yellow>/skilladmin point set <Spieler> <Menge></yellow>
+      <yellow>/skilladmin point reset <Spieler></yellow>
+      <yellow>/skilladmin boost give <Spieler> <Multiplikator> <Dauer></yellow>
+      <yellow>/skilladmin boost global <Multiplikator> <Dauer></yellow>
+      <yellow>/skilladmin boost clear <global|Spieler></yellow>
+      <yellow>/skilladmin boost list [Spieler]</yellow>
+      <yellow>/skilladmin level set <Spieler> <Stufe></yellow>
+      <yellow>/skilladmin reset <Spieler> [all|stats|points]</yellow>
+      <yellow>/skilladmin reload</yellow>

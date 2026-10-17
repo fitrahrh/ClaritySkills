@@ -1,0 +1,186 @@
+prefix: "<gradient:#FFAA00:#FF5555>[ClaritySkills]</gradient> <gray>"
+
+general:
+  no_permission: "<prefix><red>このコマンドを実行する権限がありません。"
+
+stat:
+  attack:
+    name: "<red>攻撃力 (Attack)</red>"
+    desc: "<gray>敵に与える物理ダメージを上昇させます。"
+  magic:
+    name: "<light_purple>魔力 (Magic)</light_purple>"
+    desc: "<gray>魔法攻撃力とスキルの威力を向上させます。"
+  defense:
+    name: "<green>防御力 (Defense)</green>"
+    desc: "<gray>受けるダメージを軽減します。"
+  fire:
+    name: "<gold>火属性 (Fire)</gold>"
+    desc: "<gray>炎の力を操り、敵を炎上させ爆発を起こします。"
+  wind:
+    name: "<aqua>風属性 (Wind)</aqua>"
+    desc: "<gray>突風の力をまとい、素早さと落下耐性を獲得します。"
+  water:
+    name: "<blue>水属性 (Water)</blue>"
+    desc: "<gray>海流を呼び覚まし、水中生命力と凍結を付与します。"
+  earth:
+    name: "<dark_green>地属性 (Earth)</dark_green>"
+    desc: "<gray>大地の堅牢な守りでノックバックを軽減します。"
+  light:
+    name: "<yellow>光属性 (Light)</yellow>"
+    desc: "<gray>聖なる光の力でアンデッドを浄化し、回復をもたらします。"
+  insufficient_points: "<prefix><red>スキルポイントが不足しています！必要: <yellow><required></yellow>, 所持: <gold><available></gold>。"
+  max_reached: "<prefix><red>ステータス <stat> は既に最大レベルに達しています！"
+  allocated: "<prefix><green><stat> に <yellow>+<amount></yellow> ポイント割り振りました！現在レベル: <gold><level></gold>。"
+
+tier:
+  none:
+    name: "<dark_gray>なし</dark_gray>"
+    desc: "<dark_gray>まだ属性階位は解放されていません。"
+  fire:
+    blaze:
+      name: "<gold>ブレイズ階位 (Blaze)</gold>"
+      desc: "<gray>攻撃ヒット時に相手を3秒間炎上させます。"
+    inferno:
+      name: "<red><bold>インフェルノ階位 (Inferno)</bold></red>"
+      desc: "<gray>7秒間の炎上と+3の追加爆炎ダメージを与えます。"
+  wind:
+    badai:
+      name: "<aqua>疾風階位 (Badai)</aqua>"
+      desc: "<gray>落下ダメージを50%軽減し敏捷性を高めます。"
+    storm:
+      name: "<dark_aqua><bold>嵐神階位 (Storm)</bold></dark_aqua>"
+      desc: "<gray>落下ダメージを完全無効化し嵐の疾走力を獲得します。"
+  water:
+    gelombang:
+      name: "<blue>波涛階位 (Gelombang)</blue>"
+      desc: "<gray>水中でイルカの好意と活力上昇を獲得します。"
+    ice:
+      name: "<aqua><bold>氷結階位 (Ice)</bold></aqua>"
+      desc: "<gray>敵に極寒の凍結と移動速度低下を付与します。"
+  earth:
+    megalit:
+      name: "<dark_green>巨石階位 (Megalit)</dark_green>"
+      desc: "<gray>防具の耐久性とノックバック耐性を向上させます。"
+    bumi:
+      name: "<green><bold>大地階位 (Bumi)</bold></green>"
+      desc: "<gray>体力が30%以下になると緊急耐性障壁を展開します。"
+  light:
+    suar:
+      name: "<yellow>閃光階位 (Suar)</yellow>"
+      desc: "<gray>アンデッドモンスターに対して+25%の聖なる特効ダメージを与えます。"
+    foton:
+      name: "<white><bold>光子階位 (Foton)</bold></white>"
+      desc: "<gray>アンデッド特効+50%に加え、攻撃ヒット時に体力を回復します。"
+  unlocked_title: "<yellow><bold>属性階位解放！</bold></yellow>"
+  unlocked_subtitle: "<gray><element> の <tier> をマスターしました！"
+  unlocked_broadcast: "<prefix><gold><player></gold> が <element> の <tier> を解放しました！"
+
+level:
+  max_reached: "<prefix><yellow>最大レベルに達しています！"
+  up_title: "<gold><bold>レベルアップ！</bold></gold>"
+  up_subtitle: "<gray>レベル <yellow><level></yellow> に到達！ +<points> ポイント獲得。"
+  up_message: "<prefix><green>おめでとうございます！レベル <yellow><level></yellow> に到達し、<gold>+<points> スキルポイント</gold> を獲得しました！"
+
+exp:
+  received: "<prefix><green><yellow>+<amount> EXP</yellow> を獲得しました <gray>(ブースト: <aqua><multiplier></aqua>)。</gray>"
+
+point:
+  received: "<prefix><green><gold>+<amount> スキルポイント</gold> を獲得しました！"
+
+boost:
+  received: "<prefix><green><yellow><duration></yellow> の間、<gold><multiplier></gold> のEXPブーストを獲得しました！"
+  global_broadcast: "<prefix><gold><bold>全体EXPブースト！</bold></gold> 全サーバーで <yellow><multiplier></yellow> 倍のEXPが <aqua><duration></aqua> 間有効です！"
+
+dialog:
+  general:
+    btn_close: "<red>閉じる</red>"
+    btn_back: "<yellow>戻る</yellow>"
+    btn_confirm: "<green>確定</green>"
+    btn_cancel: "<red>キャンセル</red>"
+  main:
+    title: "CLARITY SKILLS"
+    body: |
+      <gold><bold>プレイヤースキル概要</bold></gold>
+      <gray>レベル:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max_level></gray>
+      <gray>EXP:</gray> <green><current_exp></green> <dark_gray>/</dark_gray> <gray><req_exp></gray> <aqua>(<exp_percent>%)</aqua>
+      <gray>利用可能ポイント:</gray> <gold><bold><points></bold></gold>
+      <gray>有効なEXPブースト:</gray> <light_purple><boost></light_purple>
+
+      <yellow><bold>基本属性:</bold></yellow>
+      <red>攻撃力 (ATK):</red> <white><atk></white> | <light_purple>魔力 (MATK):</light_purple> <white><matk></white> | <green>防御力 (DEF):</green> <white><def></white>
+
+      <aqua><bold>属性ステータス:</bold></aqua>
+      <gold>火:</gold> <white><fire></white> | <aqua>風:</aqua> <white><wind></white> | <blue>水:</blue> <white><water></white> | <dark_green>地:</dark_green> <white><earth></white> | <yellow>光:</yellow> <white><light></white>
+    btn_allocate: "<green><bold>ステータス割り振り</bold></green>"
+    btn_allocate_tooltip: "<gray>スキルポイントを使って能力を強化します。"
+    btn_elements: "<aqua><bold>属性階位一覧</bold></aqua>"
+    btn_elements_tooltip: "<gray>属性階位のマイルストーンと特殊能力を確認します。"
+    btn_language: "<yellow>言語設定</yellow>"
+  attributes:
+    title: "ステータス割り振り"
+    body: "<gray>強化したいステータスを選択してください。\n利用可能ポイント: <gold><bold><points></bold></gold>"
+    stat_entry: "<stat> <dark_gray>[<yellow>Lv <level><dark_gray>/<gray><max><dark_gray>]</dark_gray>"
+  upgrade:
+    title: "ステータス強化"
+    body: |
+      <stat>
+      <desc>
+      <gray>現在レベル:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max></gray>
+      <gray>必要ポイント:</gray> <gold><cost> ポイント</gold>
+      <gray>所持ポイント:</gray> <gold><bold><points></bold></gold>
+    btn_plus_1: "<green>+1 ポイント</green>"
+    btn_plus_5: "<green>+5 ポイント</green>"
+    btn_plus_10: "<green>+10 ポイント</green>"
+    btn_custom: "<aqua>自由入力...</aqua>"
+  custom:
+    title: "カスタム割り振り"
+    body: "<gray><stat> に割り振るポイント数を入力してください:"
+    label: "ポイント数"
+    invalid_amount: "<prefix><red>無効な数値です！正の整数を入力してください。"
+  elements:
+    title: "属性階位システム"
+    body: "<gray>属性ステータスは高レベルに到達すると階位能力が解放されます:\n<yellow>第1階位 条件:</yellow> レベル 25\n<gold>第2階位 条件:</gold> レベル 50"
+    entry: "<element> <dark_gray>-</dark_gray> <tier> <dark_gray>(Lv <level>)</dark_gray>"
+    entry_tooltip: "<gray>解放条件:\n<yellow>• <t1_name> (必要Lv <t1_req>)\n<gold>• <t2_name> (必要Lv <t2_req>)</gray>"
+
+command:
+  skill:
+    info: "<prefix><gray>レベル: <yellow><level></yellow> | EXP: <green><exp></green>/<req_exp> | ポイント: <gold><points></gold> | ブースト: <aqua><boost></aqua>"
+    stats_header: "<prefix><gold><bold>=== あなたのステータス ===</bold></gold>"
+    stat_core_entry: "<gray>• <stat>: <yellow><level></yellow>"
+    stat_element_entry: "<gray>• <stat>: <yellow><level></yellow> <dark_gray>[<tier><dark_gray>]"
+    help: "<prefix><gray><yellow>/skill</yellow> でスキルメニューを開くか、<yellow>/skill info</yellow> / <yellow>/skill stats</yellow> を使用してください。"
+  admin:
+    reloaded: "<prefix><green>ClaritySkills の設定と言語ファイルを再読み込みしました。"
+    player_not_found: "<prefix><red>プレイヤー <yellow><player></yellow> はオフラインです。"
+    exp_given: "<prefix><green><gold><player></gold> に <yellow><amount> EXP</yellow> を付与しました (ブースト適用: <aqua><boosted></aqua>)。"
+    exp_taken: "<prefix><green><gold><player></gold> から <yellow><amount> EXP</yellow> を減算しました。"
+    exp_set: "<prefix><green><gold><player></gold> の EXP を <yellow><amount></yellow> に設定しました。"
+    exp_reset: "<prefix><green><gold><player></gold> の EXP を 0 にリセットしました。"
+    point_given: "<prefix><green><yellow><player></yellow> に <gold><amount> スキルポイント</gold> を付与しました。"
+    point_taken: "<prefix><green><yellow><player></yellow> から <gold><amount> スキルポイント</gold> を減算しました。"
+    point_set: "<prefix><green><yellow><player></yellow> のスキルポイントを <gold><amount></gold> に設定しました。"
+    point_reset: "<prefix><green><yellow><player></yellow> のスキルポイントを 0 にリセットしました。"
+    boost_given: "<prefix><green><yellow><player></yellow> に <gold><multiplier></gold> 倍のEXPブーストを <aqua><duration></aqua> 間付与しました。"
+    boost_cleared_player: "<prefix><green><yellow><player></yellow> の個人EXPブーストを解除しました。"
+    boost_global_set: "<prefix><green>全体EXPブースト <gold><multiplier></gold> 倍を <aqua><duration></aqua> 間設定しました。"
+    boost_global_cleared: "<prefix><green>全体EXPブーストを解除しました。"
+    level_set: "<prefix><green><yellow><player></yellow> のレベルを <gold><level></gold> に設定しました。"
+    player_reset: "<prefix><green>プレイヤー <yellow><player></yellow> のデータを初期化しました (モード: <aqua><mode></aqua>)。"
+    help: |
+      <prefix><gold><bold>ClaritySkills 管理者コマンド一覧:</bold></gold>
+      <yellow>/skilladmin exp give <プレイヤー> <量> [ブースト: true|false]</yellow>
+      <yellow>/skilladmin exp take <プレイヤー> <量></yellow>
+      <yellow>/skilladmin exp set <プレイヤー> <量></yellow>
+      <yellow>/skilladmin exp reset <プレイヤー></yellow>
+      <yellow>/skilladmin point give <プレイヤー> <量></yellow>
+      <yellow>/skilladmin point take <プレイヤー> <量></yellow>
+      <yellow>/skilladmin point set <プレイヤー> <量></yellow>
+      <yellow>/skilladmin point reset <プレイヤー></yellow>
+      <yellow>/skilladmin boost give <プレイヤー> <倍率> <期間></yellow>
+      <yellow>/skilladmin boost global <倍率> <期間></yellow>
+      <yellow>/skilladmin boost clear <global|プレイヤー></yellow>
+      <yellow>/skilladmin boost list [プレイヤー]</yellow>
+      <yellow>/skilladmin level set <プレイヤー> <レベル></yellow>
+      <yellow>/skilladmin reset <プレイヤー> [all|stats|points]</yellow>
+      <yellow>/skilladmin reload</yellow>

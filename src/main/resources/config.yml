@@ -1,0 +1,55 @@
+# ==========================================================
+# ClaritySkills Configuration
+# Paper 26.3 Native Dialog Skill & Stat System
+# Addon Foundation for ClarityRPG
+# ==========================================================
+
+settings:
+  # Maximum player skill level
+  max_level: 100
+  
+  # Base EXP required for level 1 -> 2
+  base_exp: 100
+  
+  # Multiplier per level: req_exp = base_exp * (level ^ exp_exponent)
+  exp_exponent: 1.5
+  
+  # Skill points awarded upon each level up
+  points_per_level: 2
+  
+  # Maximum level for individual attributes
+  stat_max_level: 100
+  
+  # Points cost per stat upgrade
+  cost_per_stat_point: 1
+
+elements:
+  # Milestone thresholds for elemental tiers
+  tier_1_threshold: 25
+  tier_2_threshold: 50
+
+mechanics:
+  # Toggle built-in combat and passive stat scaling
+  # (Can be disabled if ClarityRPG handles damage formulas)
+  enable_builtin_combat_mechanics: true
+  enable_builtin_elemental_mechanics: true
+  
+  # Attack: Bonus physical damage per point
+  attack_damage_per_point: 0.15
+  
+  # Defense: Damage reduction percent per point (capped at 75%)
+  defense_reduction_per_point: 0.005
+  defense_reduction_cap: 0.75
+  
+  # Magic: Bonus potion/magic damage multiplier per point
+  magic_damage_multiplier_per_point: 0.01
+
+effects:
+  play_level_up_sound: true
+  level_up_sound: "ui.toast.challenge_complete"
+  play_tier_unlock_sound: true
+  tier_unlock_sound: "ui.toast.challenge_complete"
+
+gui:
+  # Enable registration in Pause (ESC) Menu
+  register_pause_screen: true

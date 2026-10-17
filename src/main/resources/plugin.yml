@@ -1,0 +1,27 @@
+name: ClaritySkills
+version: '${version}'
+main: com.harukiyu.clarityskills.ClaritySkills
+bootstrapper: com.harukiyu.clarityskills.ClaritySkillsBootstrap
+api-version: '1.21'
+description: Advanced RPG Skill & Attribute Addon for Paper 26.3
+authors: [Harukiyu]
+
+commands:
+  skill:
+    description: Open skill status and allocation menu
+    aliases: [skills]
+    permission: clarityskills.use
+    usage: /skill [menu|info|stats|help]
+  skilladmin:
+    description: Admin commands for skills, exp, points and boost
+    aliases: [skillsadmin, skadmin]
+    permission: clarityskills.admin
+    usage: /skilladmin <exp|point|boost|level|reset|reload>
+
+permissions:
+  clarityskills.use:
+    description: Allows using /skill
+    default: true
+  clarityskills.admin:
+    description: Allows using /skilladmin
+    default: op

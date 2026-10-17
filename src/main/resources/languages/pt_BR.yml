@@ -1,0 +1,186 @@
+prefix: "<gradient:#FFAA00:#FF5555>[ClaritySkills]</gradient> <gray>"
+
+general:
+  no_permission: "<prefix><red>Você não tem permissão para executar este comando."
+
+stat:
+  attack:
+    name: "<red>Ataque</red>"
+    desc: "<gray>Aumenta o dano físico causado aos inimigos."
+  magic:
+    name: "<light_purple>Magia</light_purple>"
+    desc: "<gray>Aumenta o poder mágico e a potência das habilidades."
+  defense:
+    name: "<green>Defesa</green>"
+    desc: "<gray>Reduz o dano sofrido por ataques inimigos."
+  fire:
+    name: "<gold>Fogo</gold>"
+    desc: "<gray>Comanda chamas para queimar inimigos e gerar explosões."
+  wind:
+    name: "<aqua>Vento</aqua>"
+    desc: "<gray>Utiliza vendavais para agilidade e redução de queda."
+  water:
+    name: "<blue>Água</blue>"
+    desc: "<gray>Canaliza correntes aquáticas para vitalidade e congelamento."
+  earth:
+    name: "<dark_green>Terra</dark_green>"
+    desc: "<gray>Forja resistência sólida e barreiras protetoras."
+  light:
+    name: "<yellow>Luz</yellow>"
+    desc: "<gray>Invoca energia sagrada para punir mortos-vivos."
+  insufficient_points: "<prefix><red>Pontos insuficientes! Necessário: <yellow><required></yellow>, Disponível: <gold><available></gold>."
+  max_reached: "<prefix><red>O atributo <stat> já alcançou o nível máximo!"
+  allocated: "<prefix><green>Adicionado <yellow>+<amount></yellow> pontos em <stat>! Nível atual: <gold><level></gold>."
+
+tier:
+  none:
+    name: "<dark_gray>Nenhum</dark_gray>"
+    desc: "<dark_gray>Nenhum nível elemental desbloqueado ainda."
+  fire:
+    blaze:
+      name: "<gold>Grau Blaze</gold>"
+      desc: "<gray>Queima os alvos por 3 segundos ao golpear."
+    inferno:
+      name: "<red><bold>Grau Inferno</bold></red>"
+      desc: "<gray>Queima alvos por 7 segundos com +3 de dano explosivo."
+  wind:
+    badai:
+      name: "<aqua>Grau Badai</aqua>"
+      desc: "<gray>Reduz o dano de queda em 50% e confere agilidade."
+    storm:
+      name: "<dark_aqua><bold>Grau Storm</bold></dark_aqua>"
+      desc: "<gray>Imunidade total a dano de queda e velocidade de tempestade."
+  water:
+    gelombang:
+      name: "<blue>Grau Gelombang</blue>"
+      desc: "<gray>Vitalidade aumentada e graça do golfinho nas águas."
+    ice:
+      name: "<aqua><bold>Grau Ice</bold></aqua>"
+      desc: "<gray>Aplica lentidão severa e congelamento aos inimigos."
+  earth:
+    megalit:
+      name: "<dark_green>Grau Megalit</dark_green>"
+      desc: "<gray>Fortitude de armadura e resistência a repulsão."
+    bumi:
+      name: "<green><bold>Grau Bumi</bold></green>"
+      desc: "<gray>Gera barreira de Resistência quando a vida está abaixo de 30%."
+  light:
+    suar:
+      name: "<yellow>Grau Suar</yellow>"
+      desc: "<gray>Causa +25% de dano sagrado contra mortos-vivos."
+    foton:
+      name: "<white><bold>Grau Foton</bold></white>"
+      desc: "<gray>Causa +50% de dano sagrado e recupera vida ao atacar."
+  unlocked_title: "<yellow><bold>GRAU DESBLOQUEADO!</bold></yellow>"
+  unlocked_subtitle: "<gray>Desbloqueado <tier> para o elemento <element>!"
+  unlocked_broadcast: "<prefix><gold><player></gold> desbloqueou <tier> em <element>!"
+
+level:
+  max_reached: "<prefix><yellow>Você já alcançou o nível máximo!"
+  up_title: "<gold><bold>SUBIU DE NÍVEL!</bold></gold>"
+  up_subtitle: "<gray>Nível <yellow><level></yellow> alcançado! +<points> Pontos."
+  up_message: "<prefix><green>Parabéns! Você alcançou o nível <yellow><level></yellow> e recebeu <gold>+<points> Pontos de Habilidade</gold>!"
+
+exp:
+  received: "<prefix><green>Recebido <yellow>+<amount> EXP</yellow> <gray>(Boost: <aqua><multiplier></aqua>).</gray>"
+
+point:
+  received: "<prefix><green>Você recebeu <gold>+<amount> Pontos de Habilidade</gold>!"
+
+boost:
+  received: "<prefix><green>Você recebeu um Boost de EXP de <gold><multiplier></gold> por <yellow><duration></yellow>!"
+  global_broadcast: "<prefix><gold><bold>BOOST GLOBAL!</bold></gold> Multiplicador de EXP <yellow><multiplier></yellow> ativo por <aqua><duration></aqua>!"
+
+dialog:
+  general:
+    btn_close: "<red>Fechar</red>"
+    btn_back: "<yellow>Voltar</yellow>"
+    btn_confirm: "<green>Confirmar</green>"
+    btn_cancel: "<red>Cancelar</red>"
+  main:
+    title: "CLARITY SKILLS"
+    body: |
+      <gold><bold>Resumo de Habilidades do Jogador</bold></gold>
+      <gray>Nível:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max_level></gray>
+      <gray>EXP:</gray> <green><current_exp></green> <dark_gray>/</dark_gray> <gray><req_exp></gray> <aqua>(<exp_percent>%)</aqua>
+      <gray>Pontos Disponíveis:</gray> <gold><bold><points></bold></gold>
+      <gray>EXP Boost Ativo:</gray> <light_purple><boost></light_purple>
+
+      <yellow><bold>Atributos Principais:</bold></yellow>
+      <red>Ataque (ATK):</red> <white><atk></white> | <light_purple>Magia (MATK):</light_purple> <white><matk></white> | <green>Defesa (DEF):</green> <white><def></white>
+
+      <aqua><bold>Atributos Elementais:</bold></aqua>
+      <gold>Fogo:</gold> <white><fire></white> | <aqua>Vento:</aqua> <white><wind></white> | <blue>Água:</blue> <white><water></white> | <dark_green>Terra:</dark_green> <white><earth></white> | <yellow>Luz:</yellow> <white><light></white>
+    btn_allocate: "<green><bold>Distribuir Atributos</bold></green>"
+    btn_allocate_tooltip: "<gray>Aloque pontos para fortalecer seus atributos."
+    btn_elements: "<aqua><bold>Graus Elementais</bold></aqua>"
+    btn_elements_tooltip: "<gray>Veja os marcos elementais e habilidades especiais."
+    btn_language: "<yellow>Configurações de Idioma</yellow>"
+  attributes:
+    title: "DISTRIBUIÇÃO DE ATRIBUTOS"
+    body: "<gray>Selecione um atributo para distribuir pontos.\nPontos Disponíveis: <gold><bold><points></bold></gold>"
+    stat_entry: "<stat> <dark_gray>[<yellow>Nv <level><dark_gray>/<gray><max><dark_gray>]</dark_gray>"
+  upgrade:
+    title: "MELHORAR ATRIBUTO"
+    body: |
+      <stat>
+      <desc>
+      <gray>Nível Atual:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max></gray>
+      <gray>Custo por Ponto:</gray> <gold><cost> Ponto(s)</gold>
+      <gray>Pontos Disponíveis:</gray> <gold><bold><points></bold></gold>
+    btn_plus_1: "<green>+1 Ponto</green>"
+    btn_plus_5: "<green>+5 Pontos</green>"
+    btn_plus_10: "<green>+10 Pontos</green>"
+    btn_custom: "<aqua>Quantia Livre...</aqua>"
+  custom:
+    title: "DISTRIBUIÇÃO PERSONALIZADA"
+    body: "<gray>Digite a quantia de pontos a aplicar em <stat>:"
+    label: "Quantia de Pontos"
+    invalid_amount: "<prefix><red>Quantia inválida! Por favor, informe um número inteiro positivo."
+  elements:
+    title: "GRAUS ELEMENTAIS"
+    body: "<gray>Atributos elementais liberam poderes especiais em níveis elevados:\n<yellow>Meta Grau 1:</yellow> Nível 25\n<gold>Meta Grau 2:</gold> Nível 50"
+    entry: "<element> <dark_gray>-</dark_gray> <tier> <dark_gray>(Nv <level>)</dark_gray>"
+    entry_tooltip: "<gray>Requisitos:\n<yellow>• <t1_name> (Req Nv <t1_req>)\n<gold>• <t2_name> (Req Nv <t2_req>)</gray>"
+
+command:
+  skill:
+    info: "<prefix><gray>Nível: <yellow><level></yellow> | EXP: <green><exp></green>/<req_exp> | Pontos: <gold><points></gold> | Boost: <aqua><boost></aqua>"
+    stats_header: "<prefix><gold><bold>=== Seus Atributos ===</bold></gold>"
+    stat_core_entry: "<gray>• <stat>: <yellow><level></yellow>"
+    stat_element_entry: "<gray>• <stat>: <yellow><level></yellow> <dark_gray>[<tier><dark_gray>]"
+    help: "<prefix><gray>Use <yellow>/skill</yellow> para abrir o diálogo de habilidades ou <yellow>/skill info</yellow> / <yellow>/skill stats</yellow>."
+  admin:
+    reloaded: "<prefix><green>Configuração e idiomas do ClaritySkills recarregados."
+    player_not_found: "<prefix><red>Jogador <yellow><player></yellow> não encontrado online."
+    exp_given: "<prefix><green>Concedido <yellow><amount> EXP</yellow> para <gold><player></gold> (Boost: <aqua><boosted></aqua>)."
+    exp_taken: "<prefix><green>Removido <yellow><amount> EXP</yellow> de <gold><player></gold>."
+    exp_set: "<prefix><green>Definido EXP de <gold><player></gold> para <yellow><amount></yellow>."
+    exp_reset: "<prefix><green>Redefinido EXP de <gold><player></gold> para 0."
+    point_given: "<prefix><green>Concedido <gold><amount> Pontos</gold> para <yellow><player></yellow>."
+    point_taken: "<prefix><green>Removido <gold><amount> Pontos</gold> de <yellow><player></yellow>."
+    point_set: "<prefix><green>Definido Pontos de <yellow><player></yellow> para <gold><amount></gold>."
+    point_reset: "<prefix><green>Redefinido Pontos de <yellow><player></yellow> para 0."
+    boost_given: "<prefix><green>Concedido EXP Boost de <gold><multiplier></gold> para <yellow><player></yellow> por <aqua><duration></aqua>."
+    boost_cleared_player: "<prefix><green>Removido EXP Boost pessoal de <yellow><player></yellow>."
+    boost_global_set: "<prefix><green>EXP Boost Global de <gold><multiplier></gold> definido por <aqua><duration></aqua>."
+    boost_global_cleared: "<prefix><green>EXP Boost Global limpo com sucesso."
+    level_set: "<prefix><green>Definido nível de <yellow><player></yellow> para <gold><level></gold>."
+    player_reset: "<prefix><green>Jogador <yellow><player></yellow> resetado (Modo: <aqua><mode></aqua>)."
+    help: |
+      <prefix><gold><bold>Ajuda Admin ClaritySkills:</bold></gold>
+      <yellow>/skilladmin exp give <player> <amount> [boost: true|false]</yellow>
+      <yellow>/skilladmin exp take <player> <amount></yellow>
+      <yellow>/skilladmin exp set <player> <amount></yellow>
+      <yellow>/skilladmin exp reset <player></yellow>
+      <yellow>/skilladmin point give <player> <amount></yellow>
+      <yellow>/skilladmin point take <player> <amount></yellow>
+      <yellow>/skilladmin point set <player> <amount></yellow>
+      <yellow>/skilladmin point reset <player></yellow>
+      <yellow>/skilladmin boost give <player> <multiplier> <duration></yellow>
+      <yellow>/skilladmin boost global <multiplier> <duration></yellow>
+      <yellow>/skilladmin boost clear <global|player></yellow>
+      <yellow>/skilladmin boost list [player]</yellow>
+      <yellow>/skilladmin level set <player> <level></yellow>
+      <yellow>/skilladmin reset <player> [all|stats|points]</yellow>
+      <yellow>/skilladmin reload</yellow>

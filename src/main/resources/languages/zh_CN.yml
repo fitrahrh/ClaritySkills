@@ -1,0 +1,186 @@
+prefix: "<gradient:#FFAA00:#FF5555>[ClaritySkills]</gradient> <gray>"
+
+general:
+  no_permission: "<prefix><red>你没有权限执行此命令。"
+
+stat:
+  attack:
+    name: "<red>攻击力</red>"
+    desc: "<gray>提升对敌人造成的物理伤害。"
+  magic:
+    name: "<light_purple>魔法力</light_purple>"
+    desc: "<gray>增强法术强度和技能伤害。"
+  defense:
+    name: "<green>防御力</green>"
+    desc: "<gray>降低承受来自敌人的伤害。"
+  fire:
+    name: "<gold>火焰</gold>"
+    desc: "<gray>掌控烈焰元素灼烧敌人并引发爆发伤害。"
+  wind:
+    name: "<aqua>疾风</aqua>"
+    desc: "<gray>驭使暴风之力提升敏捷并减免坠落伤害。"
+  water:
+    name: "<blue>水流</blue>"
+    desc: "<gray>引导海洋力量增强水下生存并附加冰霜迟缓。"
+  earth:
+    name: "<dark_green>大地</dark_green>"
+    desc: "<gray>铸造岩石般坚毅的护甲与关键时刻的护盾。"
+  light:
+    name: "<yellow>圣光</yellow>"
+    desc: "<gray>唤醒神圣力量重创亡灵生物并在攻击时愈合自身。"
+  insufficient_points: "<prefix><red>技能点不足！需要: <yellow><required></yellow>，当前拥有: <gold><available></gold>。"
+  max_reached: "<prefix><red>属性 <stat> 已达到最高等级！"
+  allocated: "<prefix><green>成功分配 <yellow>+<amount></yellow> 点至 <stat>！当前等级: <gold><level></gold>。"
+
+tier:
+  none:
+    name: "<dark_gray>无</dark_gray>"
+    desc: "<dark_gray>尚未解锁任何元素阶位。"
+  fire:
+    blaze:
+      name: "<gold>烈焰阶 (Blaze)</gold>"
+      desc: "<gray>攻击命中时点燃目标3秒。"
+    inferno:
+      name: "<red><bold>地狱阶 (Inferno)</bold></red>"
+      desc: "<gray>点燃目标7秒并额外造成+3点火焰爆发伤害。"
+  wind:
+    badai:
+      name: "<aqua>暴风阶 (Badai)</aqua>"
+      desc: "<gray>减免50%坠落伤害并提升身手敏捷。"
+    storm:
+      name: "<dark_aqua><bold>狂岚阶 (Storm)</bold></dark_aqua>"
+      desc: "<gray>完全免疫坠落伤害并获得疾风狂暴加成。"
+  water:
+    gelombang:
+      name: "<blue>巨浪阶 (Gelombang)</blue>"
+      desc: "<gray>获得水下呼吸和如海豚般的迅捷潜水能力。"
+    ice:
+      name: "<aqua><bold>极寒阶 (Ice)</bold></aqua>"
+      desc: "<gray>使目标陷入严重缓慢与冰冻严寒状态。"
+  earth:
+    megalit:
+      name: "<dark_green>巨石阶 (Megalit)</dark_green>"
+      desc: "<gray>提升护甲韧性并显著减免击退效果。"
+    bumi:
+      name: "<green><bold>大地阶 (Bumi)</bold></green>"
+      desc: "<gray>当生命值低于30%时触发紧急抗性屏障。"
+  light:
+    suar:
+      name: "<yellow>辉芒阶 (Suar)</yellow>"
+      desc: "<gray>对亡灵生物额外造成+25%神圣裁决伤害。"
+    foton:
+      name: "<white><bold>光子阶 (Foton)</bold></white>"
+      desc: "<gray>对亡灵造成+50%伤害并在命中时吸取生命治疗自身。"
+  unlocked_title: "<yellow><bold>阶位解锁！</bold></yellow>"
+  unlocked_subtitle: "<gray>已掌握 <element> 元素的 <tier>！"
+  unlocked_broadcast: "<prefix><gold><player></gold> 成功解锁了 <element> 元素的 <tier>！"
+
+level:
+  max_reached: "<prefix><yellow>你已达到最大等级！"
+  up_title: "<gold><bold>等级提升！</bold></gold>"
+  up_subtitle: "<gray>已达到等级 <yellow><level></yellow>！获得 +<points> 技能点。"
+  up_message: "<prefix><green>恭喜！你提升至等级 <yellow><level></yellow> 并获得了 <gold>+<points> 技能点</gold>！"
+
+exp:
+  received: "<prefix><green>获得 <yellow>+<amount> 经验</yellow> <gray>(加成倍率: <aqua><multiplier></aqua>)。</gray>"
+
+point:
+  received: "<prefix><green>你获得了 <gold>+<amount> 技能点</gold>！"
+
+boost:
+  received: "<prefix><green>你获得了为期 <yellow><duration></yellow> 的 <gold><multiplier></gold> 经验加成！"
+  global_broadcast: "<prefix><gold><bold>全服经验狂欢！</bold></gold> 全服已开启 <yellow><multiplier></yellow> 经验加成，持续 <aqua><duration></aqua>！"
+
+dialog:
+  general:
+    btn_close: "<red>关闭</red>"
+    btn_back: "<yellow>返回</yellow>"
+    btn_confirm: "<green>确认</green>"
+    btn_cancel: "<red>取消</red>"
+  main:
+    title: "CLARITY SKILLS"
+    body: |
+      <gold><bold>玩家技能概览</bold></gold>
+      <gray>等级:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max_level></gray>
+      <gray>经验值:</gray> <green><current_exp></green> <dark_gray>/</dark_gray> <gray><req_exp></gray> <aqua>(<exp_percent>%)</aqua>
+      <gray>可用技能点:</gray> <gold><bold><points></bold></gold>
+      <gray>经验加成状态:</gray> <light_purple><boost></light_purple>
+
+      <yellow><bold>基础属性:</bold></yellow>
+      <red>物理攻击 (ATK):</red> <white><atk></white> | <light_purple>魔法攻击 (MATK):</light_purple> <white><matk></white> | <green>防御减伤 (DEF):</green> <white><def></white>
+
+      <aqua><bold>元素属性:</bold></aqua>
+      <gold>火焰:</gold> <white><fire></white> | <aqua>疾风:</aqua> <white><wind></white> | <blue>水流:</blue> <white><water></white> | <dark_green>大地:</dark_green> <white><earth></white> | <yellow>圣光:</yellow> <white><light></white>
+    btn_allocate: "<green><bold>分配属性点</bold></green>"
+    btn_allocate_tooltip: "<gray>消耗技能点来增强角色属性。"
+    btn_elements: "<aqua><bold>元素阶位掌控</bold></aqua>"
+    btn_elements_tooltip: "<gray>查看元素属性的晋升里程碑与阶位特权。"
+    btn_language: "<yellow>语言切换</yellow>"
+  attributes:
+    title: "属性点数分配"
+    body: "<gray>请选择需要提升的属性。\n当前可用点数: <gold><bold><points></bold></gold>"
+    stat_entry: "<stat> <dark_gray>[<yellow>等级 <level><dark_gray>/<gray><max><dark_gray>]</dark_gray>"
+  upgrade:
+    title: "升级属性"
+    body: |
+      <stat>
+      <desc>
+      <gray>当前等级:</gray> <yellow><level></yellow> <dark_gray>/</dark_gray> <gray><max></gray>
+      <gray>消耗点数:</gray> <gold><cost> 点/级</gold>
+      <gray>剩余点数:</gray> <gold><bold><points></bold></gold>
+    btn_plus_1: "<green>+1 点</green>"
+    btn_plus_5: "<green>+5 点</green>"
+    btn_plus_10: "<green>+10 点</green>"
+    btn_custom: "<aqua>自定义数量...</aqua>"
+  custom:
+    title: "自定义点数加点"
+    body: "<gray>请输入要分配至 <stat> 的点数数量:"
+    label: "分配点数"
+    invalid_amount: "<prefix><red>输入的点数无效！请输入正整数。"
+  elements:
+    title: "元素阶位总览"
+    body: "<gray>元素属性在达到高等级时将解锁强力特权:\n<yellow>一阶门槛:</yellow> 25 级\n<gold>二阶门槛:</gold> 50 级"
+    entry: "<element> <dark_gray>-</dark_gray> <tier> <dark_gray>(等级 <level>)</dark_gray>"
+    entry_tooltip: "<gray>解锁要求:\n<yellow>• <t1_name> (需等级 <t1_req>)\n<gold>• <t2_name> (需等级 <t2_req>)</gray>"
+
+command:
+  skill:
+    info: "<prefix><gray>等级: <yellow><level></yellow> | 经验: <green><exp></green>/<req_exp> | 技能点: <gold><points></gold> | 加成: <aqua><boost></aqua>"
+    stats_header: "<prefix><gold><bold>=== 角色属性一览 ===</bold></gold>"
+    stat_core_entry: "<gray>• <stat>: <yellow><level></yellow>"
+    stat_element_entry: "<gray>• <stat>: <yellow><level></yellow> <dark_gray>[<tier><dark_gray>]"
+    help: "<prefix><gray>使用 <yellow>/skill</yellow> 打开技能面板，或使用 <yellow>/skill info</yellow> / <yellow>/skill stats</yellow>。"
+  admin:
+    reloaded: "<prefix><green>ClaritySkills 配置文件与多语言字典已成功重新加载。"
+    player_not_found: "<prefix><red>玩家 <yellow><player></yellow> 不在线。"
+    exp_given: "<prefix><green>已给予 <gold><player></gold> <yellow><amount> 点经验</yellow> (加成生效: <aqua><boosted></aqua>)。"
+    exp_taken: "<prefix><green>已扣除 <gold><player></gold> <yellow><amount> 点经验</yellow>。"
+    exp_set: "<prefix><green>已将 <gold><player></gold> 的经验值设为 <yellow><amount></yellow>。"
+    exp_reset: "<prefix><green>已将 <gold><player></gold> 的经验重置为 0。"
+    point_given: "<prefix><green>已给予 <yellow><player></yellow> <gold><amount> 技能点</gold>。"
+    point_taken: "<prefix><green>已扣除 <yellow><player></yellow> <gold><amount> 技能点</gold>。"
+    point_set: "<prefix><green>已将 <yellow><player></yellow> 的技能点设为 <gold><amount></gold>。"
+    point_reset: "<prefix><green>已将 <yellow><player></yellow> 的技能点重置为 0。"
+    boost_given: "<prefix><green>已为 <yellow><player></yellow> 设置持续 <aqua><duration></aqua> 的 <gold><multiplier></gold> 经验加成。"
+    boost_cleared_player: "<prefix><green>已清除玩家 <yellow><player></yellow> 的个人经验加成。"
+    boost_global_set: "<prefix><green>全服经验加成已设为 <gold><multiplier></gold>，持续 <aqua><duration></aqua>。"
+    boost_global_cleared: "<prefix><green>全服经验加成已清除。"
+    level_set: "<prefix><green>已将 <yellow><player></yellow> 的等级设为 <gold><level></gold>。"
+    player_reset: "<prefix><green>已重置玩家 <yellow><player></yellow> 的数据 (模式: <aqua><mode></aqua>)。"
+    help: |
+      <prefix><gold><bold>ClaritySkills 管理员指令帮助:</bold></gold>
+      <yellow>/skilladmin exp give <玩家> <数量> [是否加成: true|false]</yellow>
+      <yellow>/skilladmin exp take <玩家> <数量></yellow>
+      <yellow>/skilladmin exp set <玩家> <数量></yellow>
+      <yellow>/skilladmin exp reset <玩家></yellow>
+      <yellow>/skilladmin point give <玩家> <数量></yellow>
+      <yellow>/skilladmin point take <玩家> <数量></yellow>
+      <yellow>/skilladmin point set <玩家> <数量></yellow>
+      <yellow>/skilladmin point reset <玩家></yellow>
+      <yellow>/skilladmin boost give <玩家> <倍率> <时长></yellow>
+      <yellow>/skilladmin boost global <倍率> <时长></yellow>
+      <yellow>/skilladmin boost clear <global|玩家></yellow>
+      <yellow>/skilladmin boost list [玩家]</yellow>
+      <yellow>/skilladmin level set <玩家> <等级></yellow>
+      <yellow>/skilladmin reset <玩家> [all|stats|points]</yellow>
+      <yellow>/skilladmin reload</yellow>
